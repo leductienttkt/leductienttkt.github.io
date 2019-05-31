@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>AWS Well-Architected Framework – Disaster Recovery | AWS Cheat Sheets</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="RTO là thời gian cần thiết sau khi bị gián đoạn để khôi phục.  RPO là lượng mất dữ liệu chấp nhận được đo theo thời gian.  Disaster Recovery With AWS  Backup and Restore – lưu trữ dữ liệu sao lưu trê">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AWS Well-Architected Framework – Disaster Recovery">
+<meta property="og:url" content="http://yoursite.com/Overview/disaster-recovery/index.html">
+<meta property="og:site_name" content="AWS Cheat Sheets">
+<meta property="og:description" content="RTO là thời gian cần thiết sau khi bị gián đoạn để khôi phục.  RPO là lượng mất dữ liệu chấp nhận được đo theo thời gian.  Disaster Recovery With AWS  Backup and Restore – lưu trữ dữ liệu sao lưu trê">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/images/Disaster-Recovery-1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Disaster-Recovery-2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Disaster-Recovery-3.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Disaster-Recovery-4.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Disaster-Recovery-5.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Disaster-Recovery-6.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Disaster-Recovery-7.jpg">
+<meta property="og:updated_time" content="2019-05-31T03:55:23.733Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AWS Well-Architected Framework – Disaster Recovery">
+<meta name="twitter:description" content="RTO là thời gian cần thiết sau khi bị gián đoạn để khôi phục.  RPO là lượng mất dữ liệu chấp nhận được đo theo thời gian.  Disaster Recovery With AWS  Backup and Restore – lưu trữ dữ liệu sao lưu trê">
+<meta name="twitter:image" content="http://yoursite.com/images/Disaster-Recovery-1.jpg">
+  
+  
+    <link rel="icon" href="/images/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">AWS Cheat Sheets</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-disaster-recovery" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/Overview/disaster-recovery/" class="article-date">
+  <time datetime="2019-05-31T03:55:23.733Z" itemprop="datePublished">31-05-2019</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Overview/">Overview</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      AWS Well-Architected Framework – Disaster Recovery
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p><strong>RTO</strong> là thời gian cần thiết sau khi bị gián đoạn để khôi phục.</p>
+</li>
+<li><p><strong>RPO</strong> là lượng mất dữ liệu chấp nhận được đo theo thời gian.</p>
+</li>
+<li><p>Disaster Recovery With AWS</p>
+<ul>
+<li><p><strong>Backup and Restore</strong> – lưu trữ dữ liệu sao lưu trên S3 và khôi phục dữ liệu nhanh chóng và đáng tin cậy.</p>
+<p><img src="/images/Disaster-Recovery-1.jpg" alt></p>
+</li>
+<li><p><strong>Pilot Light</strong> for Quick Recovery into AWS – thời gian phục hồi nhanh hơn so với <strong>Backup and Restore</strong> vì các phần cốt lõi của hệ thống đã chạy và liên tục được cập nhật.</p>
+<p> <img src="/images/Disaster-Recovery-2.jpg" alt><br> <img src="/images/Disaster-Recovery-3.jpg" alt></p>
+</li>
+<li><p><strong>Warm Standby Solution</strong> – phiên bản thu nhỏ của một môi trường đầy đủ chức năng luôn chạy trong cloud.</p>
+<p> <img src="/images/Disaster-Recovery-4.jpg" alt><br> <img src="/images/Disaster-Recovery-5.jpg" alt></p>
+</li>
+<li><p><strong>Multi-Site Solution</strong> – chạy cơ sở hạ tầng của bạn trên một site khác.</p>
+<p> <img src="/images/Disaster-Recovery-6.jpg" alt><br> <img src="/images/Disaster-Recovery-7.jpg" alt></p>
+</li>
+<li><p>AWS Production to an AWS DR Solution Using Multiple AWS Regions – tận dụng lợi thế của AWS multiple availability zones.</p>
+</li>
+</ul>
+</li>
+<li><p>Services</p>
+<ul>
+<li><strong>S3</strong> nơi để sao lưu dữ liệu, có thể nhanh chóng để thực hiện khôi phục.</li>
+<li><strong>Import/Export</strong> để chuyển các tập dữ liệu rất lớn bằng cách vận chuyển các thiết bị lưu trữ trực tiếp đến AWS.</li>
+<li><strong>Glacier</strong> để lưu trữ dữ liệu dài hạn trong đó thời gian truy xuất có thể cho phép trong vài giờ.</li>
+<li><strong>Storage Gateway</strong> sao chép snapshots của dữ liệu của bạn sang S3 để sao lưu. Bạn có thể tạo local volumes hoặc EBS từ các snapshots này.</li>
+<li>Các máy chủ được cấu hình sẵn được đóng gói dưới dạng <strong>Amazon Machine Images (AMIs)</strong>.</li>
+<li><strong>Elastic Load Balancing (ELB)</strong> để phân phối lưu lượng cho nhiều instances.</li>
+<li><strong>Route 53</strong> để định tuyến lưu lượng đến các trang web khác nhau cung cấp cùng một ứng dụng hoặc dịch vụ.</li>
+<li><strong>Elastic IP address</strong> cho static IP addresses.</li>
+<li><strong>Virtual Private Cloud (Amazon VPC)</strong> để cung cấp một section riêng, tách biệt của  AWS cloud.</li>
+<li><strong>Direct Connect</strong> cho kết nối mạng chuyên dụng từ cơ sở của bạn đến AWS.</li>
+<li><strong>Relational Database Service (RDS)</strong> cho các cơ sở dữ liệu quan hệ trong đám mây.</li>
+<li><strong>DynamoDB</strong> quản lý các cơ sở dữ liệu NoQuery để lưu trữ và truy xuất bất kỳ lượng dữ liệu nào và phục vụ bất kỳ mức lưu lượng yêu cầu nào.</li>
+<li><strong>Redshift</strong> cho dịch vụ kho dữ liệu quy mô petabyte phân tích tất cả dữ liệu của bạn bằng các công cụ  thông minh hiện có.</li>
+<li><strong>CloudFormation</strong> để tạo ra các tài nguyên AWS liên quan và cung cấp chúng theo cách có trật tự và có thể dự đoán được.</li>
+<li><strong>Elastic Beanstalk</strong> là một dịch vụ để triển khai  các ứng dụng và dịch vụ web.</li>
+<li><strong>OpsWorks</strong> là một dịch vụ quản lý ứng dụng để triển khai và vận hành các ứng dụng thuộc mọi loại hình và kích cỡ.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>Source:<br><a href="https://media.amazonwebservices.com/AWS_Disaster_Recovery.pdf" target="_blank" rel="noopener">https://media.amazonwebservices.com/AWS_Disaster_Recovery.pdf</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/Overview/disaster-recovery/" data-id="cjwbjz85m0005rgjm324lf1jq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/home/introduction/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          AWS Cheat Sheets
+        
+      </div>
+    </a>
+  
+  
+    <a href="/Overview/design-principles/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">AWS Well-Architected Framework – Design Principles</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Overview/">Overview</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/home/introduction/">AWS Cheat Sheets</a>
+          </li>
+        
+          <li>
+            <a href="/Overview/disaster-recovery/">AWS Well-Architected Framework – Disaster Recovery</a>
+          </li>
+        
+          <li>
+            <a href="/Overview/design-principles/">AWS Well-Architected Framework – Design Principles</a>
+          </li>
+        
+          <li>
+            <a href="/Overview/five-pillars/">AWS Well-Architected Framework – Five Pillars</a>
+          </li>
+        
+          <li>
+            <a href="/Overview/aws-pricing/">AWS Pricing</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Mr.Nara<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
