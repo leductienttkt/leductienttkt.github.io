@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="AWS Cheat Sheets">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+<meta property="og:url" content="https://leductienttkt.github.io/page/2/index.html">
 <meta property="og:site_name" content="AWS Cheat Sheets">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
@@ -48,7 +48,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://leductienttkt.github.io"></form>
       </div>
     </div>
   </div>
@@ -56,16 +56,13 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-five-pillars" class="article article-type-post" itemscope itemprop="blogPost">
+    
+      <article id="post-introduction" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/Overview/five-pillars/" class="article-date">
-  <time datetime="2019-05-30T08:09:11.776Z" itemprop="datePublished">30-05-2019</time>
+    <a href="/home/introduction/" class="article-date">
+  <time datetime="2019-05-31T07:10:42.313Z" itemprop="datePublished">31-05-2019</time>
 </a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Overview/">Overview</a>
-  </div>
-
   </div>
   <div class="article-inner">
     
@@ -74,7 +71,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/Overview/five-pillars/">AWS Well-Architected Framework – Five Pillars</a>
+      <a class="article-title" href="/home/introduction/">AWS Cheat Sheets</a>
     </h1>
   
 
@@ -82,144 +79,39 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/AWS-Well-Architected-Framework-Five-Pillars.jpg" alt></p>
-<h3 id="1-Operational-Excellence"><a href="#1-Operational-Excellence" class="headerlink" title="1. Operational Excellence"></a>1. Operational Excellence</h3><ul>
-<li><p>Khả năng chạy và giám sát các hệ thống để cung cấp giá trị kinh doanh và liên tục cải thiện các quy trình và thủ tục hỗ trợ.</p>
-</li>
-<li><p>Có 3 lĩnh vực và công cụ thực hành tốt nhất cho operational excellence:</p>
-<ol>
-<li>Prepare – AWS Config</li>
-<li>Operate – Amazon CloudWatch</li>
-<li>Evolve – Amazon Elasticsearch Service</li>
-</ol>
-</li>
-<li><p>Key AWS service: <strong>AWS CloudFormation</strong> </p>
-</li>
-</ul>
-<h3 id="2-Security"><a href="#2-Security" class="headerlink" title="2. Security"></a>2. Security</h3><ul>
-<li><p>Khả năng bảo vệ thông tin, hệ thống và tài sản trong khi cung cấp giá trị kinh doanh thông qua các đánh giá rủi ro và chiến lược giảm thiểu.</p>
-</li>
-<li><p>Có 5 lĩnh vực và công cụ thực hành tốt nhất để bảo mật:</p>
-<ol>
-<li>Identity and Access Management – IAM, Multi-Factor Authentication, AWS Organizations</li>
-<li>Detective Controls – AWS CloudTrail, AWS Config, Amazon GuardDuty</li>
-<li>Infrastructure Protection – Amazon VPC, Amazon CloudFront with AWS Shield, AWS WAF</li>
-<li>Data Protection – ELB, Amazon Elastic Block Store (Amazon EBS), Amazon S3, and Amazon Relational Database Service (Amazon RDS) encryption, Amazon Macie, AWS Key Management Service (AWS KMS)</li>
-<li>Incident Response – IAM, Amazon CloudWatch Events</li>
-</ol>
-</li>
-<li><p>Key AWS service: <strong>AWS Identity and Access Management (IAM)</strong></p>
-</li>
-</ul>
-<h3 id="3-Reliability"><a href="#3-Reliability" class="headerlink" title="3. Reliability"></a>3. Reliability</h3><ul>
-<li><p>Khả năng của một hệ thống phục hồi từ sự gián đoạn cơ sở hạ tầng hoặc dịch vụ, tự động có được tài nguyên để đáp ứng nhu cầu và giảm thiểu sự gián đoạn như cấu hình sai hoặc các sự cố mạng tạm thời.</p>
-</li>
-<li><p>Có 3 lĩnh vực và công cụ thực hành tốt nhất cho reliability:</p>
-<ol>
-<li>Foundations – IAM, Amazon VPC, AWS Trusted Advisor, AWS Shield</li>
-<li>Change Management – AWS CloudTrail, AWS Config, Auto Scaling, Amazon CloudWatch</li>
-<li>Failure Management – AWS CloudFormation, Amazon S3, AWS KMS, Amazon Glacier</li>
-</ol>
-</li>
-<li><p>Key AWS service: <strong>Amazon CloudWatch</strong></p>
-</li>
-</ul>
-<h3 id="4-Performance-Efficiency"><a href="#4-Performance-Efficiency" class="headerlink" title="4. Performance Efficiency"></a>4. Performance Efficiency</h3><ul>
-<li><p>Khả năng sử dụng tài nguyên điện toán hiệu quả để đáp ứng các yêu cầu hệ thống và duy trì hiệu quả đó khi nhu cầu thay đổi và công nghệ phát triển. </p>
-</li>
-<li><p>Có 4 lĩnh vực và công cụ thực hành tốt nhất cho performance efficiency:</p>
-<ol>
-<li>Selection – Auto Scaling for Compute, Amazon EBS and S3 for Storage, Amazon RDS and DynamoDB for Database, Route53, VPC, and AWS Direct Connect for Network</li>
-<li>Review – AWS Blog and What’s New section of the website</li>
-<li>Monitoring –  Amazon CloudWatch</li>
-<li>Tradeoffs – Amazon Elasticache, Amazon CloudFront, AWS Snowball, Amazon RDS read replicas.</li>
-</ol>
-</li>
-<li><p>Key AWS service: <strong>Amazon CloudWatch</strong></p>
-</li>
-</ul>
-<h3 id="5-Cost-Optimization"><a href="#5-Cost-Optimization" class="headerlink" title="5. Cost Optimization"></a>5. Cost Optimization</h3><ul>
-<li>Khả năng tránh hoặc loại bỏ chi phí không cần thiết hoặc tài nguyên dưới mức tối ưu.</li>
-<li>Có 4 lĩnh vực và công cụ thực hành tốt nhất cho cost optimization:<ol>
-<li>Cost-Effective Resources – Cost Explorer, Amazon CloudWatch and Trusted Advisor, Amazon Aurora for RDS, AWS Direct Connect with Amazon CloudFront</li>
-<li>Matching supply and demand – Auto Scaling</li>
-<li>Expenditure Awareness –  AWS Cost Explorer, AWS Budgets</li>
-<li>Optimizing Over Time – AWS News Blog and the What’s New section on the AWS website, AWS Trusted Advisor</li>
-</ol>
-</li>
-<li>Key AWS service: <strong>Cost Explorer</strong></li>
-</ul>
+        <p><strong>AWS Cheat Sheets</strong> được tạo ra để cung cấp cho bạn cái nhìn toàn cảnh về các dịch vụ AWS quan trọng mà bạn cần biết để có thể vượt qua kỳ thi <strong>AWS Certified Solutions Architect Associate</strong> rất khó khăn cũng như các kỳ thi chứng chỉ AWS khác.</p>
+<p>Nó được trình bày chủ yếu ở dạng các gạch đầu dòng để cung cấp cho bạn các ghi chú dễ nhớ sẽ giúp bạn hiểu rõ hơn về các dịch vụ AWS khác nhau.</p>
+<p>Mặc dù <strong>AWS Cheat Sheets</strong> này sẽ giúp bạn tiết kiệm thời gian trong việc duyệt qua tất cả các tài liệu AWS, nhưng bạn cũng nên đọc chúng cũng như các <strong>whitepapers</strong> để bổ sung cho các bài thi của bạn.</p>
+<p>Cuối cùng, nên trả lời càng nhiều <strong>practice test questions</strong> càng tốt để tăng thêm cơ hội vượt qua bài kiểm tra.</p>
 <hr>
-<p>Source:<br><a href="https://d1.awsstatic.com/whitepapers/architecture/AWS_Well-Architected_Framework.pdf" target="_blank" rel="noopener">https://d1.awsstatic.com/whitepapers/architecture/AWS_Well-Architected_Framework.pdf</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/Overview/five-pillars/" data-id="cjwbjz85h0003rgjm7c3l1g69" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-aws-pricing" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/Overview/aws-pricing/" class="article-date">
-  <time datetime="2019-05-30T08:09:05.324Z" itemprop="datePublished">30-05-2019</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Overview/">Overview</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/Overview/aws-pricing/">AWS Pricing</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li><p>Có ba trình điều khiển cơ bản về chi phí với AWS:</p>
-<ol>
-<li>Compute</li>
-<li>Storage</li>
-<li>Outbound data transfer.</li>
-</ol>
-</li>
-</ul>
-<p><img src="/images/AWS-Pricing.jpg" alt></p>
 <ul>
-<li><p>Dùng bao nhiêu trả bấy nhiêu</p>
-</li>
-<li><p>Ngoài ra còn có giảm giá dựa trên khối lượng cho các dịch vụ như Amazon S3.</p>
-</li>
-<li><p>Đối với tài khoản mới, có thể sử dụng <strong>AWS Free Tier</strong>.</p>
-</li>
-<li><p>AWS Free Tier cho phép sử dụng hạn chế các sản phẩm AWS miễn phí trong <strong>12 tháng</strong> kể từ khi tài khoản được tạo. Thêm chi tiết tại <a href="https://aws.amazon.com/free/" target="_blank" rel="noopener">https://aws.amazon.com/free/</a>.</p>
-</li>
-<li><p>Bạn có thể ước tính hóa đơn AWS hàng tháng của mình bằng <a href="https://calculator.s3.amazonaws.com/index.html" target="_blank" rel="noopener">AWS Simple Monthly Calculator.</a></p>
-</li>
+<li><a href="/categories/Overview/">AWS OVERVIEW</a></li>
+<li><a href="/categories/Compute-Services/">AWS COMPUTE SERVICES</a></li>
+<li>AWS STORAGE SERVICES</li>
+<li>AWS DATABASE SERVICES</li>
+<li>AWS NETWORKING &amp; CONTENT DELIVERY</li>
+<li>AWS MIGRATION SERVICES</li>
+<li>AWS SECURITY &amp; IDENTITY SERVICES</li>
+<li>AWS MANAGEMENT TOOLS</li>
+<li>AWS ANALYTICS SERVICES</li>
+<li>AWS DEVELOPER TOOLS</li>
+<li>AWS BILLING AND COST MANAGEMENT</li>
+<li>AWS APPLICATION SERVICES</li>
+<li>AWS DESKTOP AND APP STREAMING</li>
+<li>AWS MACHINE LEARNING AND AI</li>
+<li>AWS DESKTOP AND APP STREAMING</li>
+<li>OTHER AWS SERVICES</li>
 </ul>
 <hr>
-<p>Sources:<br><a href="https://d1.awsstatic.com/whitepapers/aws_pricing_overview.pdf" target="_blank" rel="noopener">https://d1.awsstatic.com/whitepapers/aws_pricing_overview.pdf</a><br><a href="https://aws.amazon.com/pricing/" target="_blank" rel="noopener">https://aws.amazon.com/pricing/</a><br><a href="https://aws.amazon.com/ec2/pricing/reserved-instances/pricing/" target="_blank" rel="noopener">https://aws.amazon.com/ec2/pricing/reserved-instances/pricing/</a></p>
-
+<p>Chúc các bạn may mắn :v </p>
+<hr>
+<p>Nội dung được dịch từ: <a href="https://tutorialsdojo.com/aws-cheat-sheets/" target="_blank" rel="noopener">https://tutorialsdojo.com/aws-cheat-sheets/</a></p>
+<hr>
+<h2 id="Mr-Nara"><a href="#Mr-Nara" class="headerlink" title="Mr.Nara"></a>Mr.Nara</h2>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/Overview/aws-pricing/" data-id="cjwbjz85l0004rgjmf94jevp1" class="article-share-link">Share</a>
+      <a data-url="https://leductienttkt.github.io/home/introduction/" data-id="cjwg28t4j0007sljmfaa3c0n0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -228,63 +120,16 @@
 </article>
 
 
-  
-    <article id="post-aws-global-infrastructure" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/Overview/aws-global-infrastructure/" class="article-date">
-  <time datetime="2019-05-30T08:08:59.156Z" itemprop="datePublished">30-05-2019</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Overview/">Overview</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/Overview/aws-global-infrastructure/">AWS Global Infrastructure</a>
-    </h1>
   
-
-      </header>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Đám mây AWS trải rộng trên <strong>66 Availability Zones</strong> tại <strong>21 Geographic Regions</strong> trên khắp thế giới, với các kế hoạch đã thông báo cho thêm <strong>12 Availability Zones</strong> và thêm <strong>4 Geographic Regions</strong> khác tại Bahrain, Cape Town, Jakarta và Milan.</p>
-<p><img src="/images/aws_global.png" alt></p>
-<p>Các <strong>Regions</strong> cung cấp nhiều <strong>Availability Zones</strong> cô lập và tách biệt về mặt vật lý được kết nối với <strong>low latency</strong>, <strong>high throughput</strong> và <strong>highly redundant networking</strong></p>
-<p>Các <strong>Availability Zones</strong> cung cấp tính sẵn sàng cao (<strong>highly availability</strong>), khả năng chịu lỗi (<strong>fault tolerance</strong>) và khả năng mở rộng (<strong>scalability</strong>).</p>
-<ul>
-<li>Bao gồm một hoặc nhiều trung tâm dữ liệu riêng biệt, mỗi trung tâm có nguồn điện dự phòng, kết nối mạng được đặt trong các cơ sở riêng biệt.</li>
-<li>Availability Zones được thể hiện bằng mã vùng theo sau là mã định danh; ví dụ: us-east-1a.</li>
-</ul>
-<p><img src="/images/AWS-Regions-and-Availability-Zones.jpg" alt></p>
-<hr>
-<p>Sources:<br><a href="https://aws.amazon.com/about-aws/global-infrastructure/" target="_blank" rel="noopener">https://aws.amazon.com/about-aws/global-infrastructure/</a><br><a href="https://docs.aws.amazon.com/aws-technical-content/latest/aws-overview/global-infrastructure.html" target="_blank" rel="noopener">https://docs.aws.amazon.com/aws-technical-content/latest/aws-overview/global-infrastructure.html</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/Overview/aws-global-infrastructure/" data-id="cjwbjz84q0000rgjmvi40iqsl" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
   
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -295,7 +140,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Overview/">Overview</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Compute-Services/">Compute Services</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Overview/">Overview</a></li></ul>
     </div>
   </div>
 
@@ -310,7 +155,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li></ul>
     </div>
   </div>
 
@@ -321,6 +166,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/Compute-Services/ec2/">Amazon Elastic Compute Cloud ( Amazon EC2 )</a>
+          </li>
         
           <li>
             <a href="/home/introduction/">AWS Cheat Sheets</a>
@@ -336,10 +185,6 @@
         
           <li>
             <a href="/Overview/five-pillars/">AWS Well-Architected Framework – Five Pillars</a>
-          </li>
-        
-          <li>
-            <a href="/Overview/aws-pricing/">AWS Pricing</a>
           </li>
         
       </ul>
