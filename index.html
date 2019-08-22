@@ -57,19 +57,12 @@
         <section id="main">
   
     
-  
-  
-    
-      <article id="post-ec2" class="article article-type-post" itemscope itemprop="blogPost">
+      <article id="post-introduction" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/Compute-Services/ec2/" class="article-date">
-  <time datetime="2019-06-03T07:34:23.514Z" itemprop="datePublished">03-06-2019</time>
+    <a href="/home/introduction/" class="article-date">
+  <time datetime="2019-08-22T04:16:22.605Z" itemprop="datePublished">22-08-2019</time>
 </a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Compute-Services/">Compute Services</a>
-  </div>
-
   </div>
   <div class="article-inner">
     
@@ -78,7 +71,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/Compute-Services/ec2/">Amazon Elastic Compute Cloud ( Amazon EC2 )</a>
+      <a class="article-title" href="/home/introduction/">AWS Cheat Sheets</a>
     </h1>
   
 
@@ -86,345 +79,39 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>Amazon Elastic Compute Cloud (Amazon EC2)</strong> cung cấp khả năng tính toán có thể mở rộng trong AWS.</p>
-<p>Sử dụng Amazon EC2 giúp loại bỏ nhu cầu đầu tư vào phần cứng, vì vậy bạn có thể phát triển và triển khai các ứng dụng nhanh hơn.</p>
-<p>Bạn có thể sử dụng Amazon EC2 để khởi chạy nhiều hoặc ít máy chủ ảo mà bạn cần, chỉ định cấu hình bảo mật, kết nối mạng và quản lý lưu trữ.</p>
-<p>Amazon EC2 cho phép bạn điều chỉnh quy mô lên hoặc xuống để xử lý các thay đổi về yêu cầu.</p>
-<h3 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h3><ul>
-<li><p>Môi trường máy chủ được gọi là <strong>instances</strong>.</p>
-</li>
-<li><p>Gói hệ điều hành và những cài đặt bổ sung trong một mẫu có thể sử dụng lại được gọi là <strong>Amazon Machine Images.</strong></p>
-</li>
-<li><p>Các cấu hình khác nhau của CPU, bộ nhớ, lưu trữ và dung lượng mạng cho các instances của bạn, được gọi là các instance types.</p>
+        <p><strong>AWS Cheat Sheets</strong> được tạo ra để cung cấp cho bạn cái nhìn toàn cảnh về các dịch vụ AWS quan trọng mà bạn cần biết để có thể vượt qua kỳ thi <strong>AWS Certified Solutions Architect Associate</strong> rất khó khăn cũng như các kỳ thi chứng chỉ AWS khác.</p>
+<p>Nó được trình bày chủ yếu ở dạng các gạch đầu dòng để cung cấp cho bạn các ghi chú dễ nhớ sẽ giúp bạn hiểu rõ hơn về các dịch vụ AWS khác nhau.</p>
+<p>Mặc dù <strong>AWS Cheat Sheets</strong> này sẽ giúp bạn tiết kiệm thời gian trong việc duyệt qua tất cả các tài liệu AWS, nhưng bạn cũng nên đọc chúng cũng như các <strong>whitepapers</strong> để bổ sung cho các bài thi của bạn.</p>
+<p>Cuối cùng, nên trả lời càng nhiều <strong>practice test questions</strong> càng tốt để tăng thêm cơ hội vượt qua bài kiểm tra.</p>
+<hr>
 <ul>
-<li><strong>t-type</strong> và <strong>m-type</strong> cho các mục đích chung.</li>
-<li><strong>c-type</strong> tối ưu hóa xử lí tính toán</li>
-<li><strong>r-type</strong>, <strong>x-type</strong> và <strong>z-type</strong> tối ưu hóa bộ nhớ</li>
-<li><strong>d-type</strong>, <strong>h-type</strong> và <strong>i-type</strong> tối ưu hóa lưu trữ</li>
-<li><strong>f-type</strong>, <strong>g-type</strong> và <strong>p-type</strong> tăng tốc độ tính toán</li>
-</ul>
-</li>
-<li><p>Bảo mật thông tin đăng nhập instances bằng việc sử dụng <strong>key pairs</strong> (AWS lưu trữ public key và bạn lưu trữ private key ở nơi an toàn)</p>
-</li>
-<li><p>Dung lượng lưu trữ cho dữ liệu tạm thời bị xóa khi bạn dừng hoặc chấm dứt instance của bạn, được gọi là <strong>instance store volumes.</strong></p>
-</li>
-<li><p>Lưu trữ lâu dài dữ liệu của bạn bằng <strong>Amazon Elastic Block Store (Amazon EBS)</strong> - (Amazon EBS volumes)</p>
-</li>
-<li><p>Nhiều vị trí thực tế cho tài nguyên của bạn, như instance và Amazon EBS volumes, được gọi là  <strong>Regions</strong> and <strong>Availability Zones</strong></p>
-</li>
-<li><p>Tường lửa cho phép bạn chỉ định các giao thức, cổng và dải IP nguồn có thể tiếp cận các instances của bạn bằng cách sử dụng các <strong>security groups</strong></p>
-</li>
-<li><p>Địa chỉ IPv4 tĩnh cho điện toán đám mây động, được gọi là  <strong>Elastic IP addresses</strong></p>
-</li>
-<li><p>Tạo và gán metadatas (tags) cho các tài nguyên EC2</p>
-</li>
-<li><p>Có thể tùy ý kết nối với mạng riêng của mình (<strong>virtual private clouds - VPC</strong>)</p>
-</li>
-<li><p>Thêm một tập lệnh sẽ được chạy khi khởi động instance được gọi là <strong>user-data</strong>.</p>
-</li>
-</ul>
-<h3 id="Instance-states"><a href="#Instance-states" class="headerlink" title="Instance states"></a>Instance states</h3><ul>
-<li><p><strong>Start</strong> –  instance chạy bình thường, chi phí sẽ được tính liên tục khi instance chạy.</p>
-</li>
-<li><p><strong>Stop</strong> –đơn giản là tắt instance. Có thể khởi động lại nó bất cứ lúc nào. Tất cả EBS volumes vẫn được đính kèm, tuy nhiên dữ liệu trong <strong>instance store volumes</strong> sẽ bị xóa. Bạn sẽ không phải trả tiền khi instance đã stop. Bạn có thể đính kèm hoặc tách các EBS volumes. Bạn cũng có thể tạo AMI từ instance, thay đổi kernel, RAM disk, và instance type khi ở trạng thái này.</p>
-</li>
-<li><p><strong>Terminate</strong> – tắt và xóa instance. Bạn không thể khởi động lại instance khi đã terminate. Mặc định <strong>root device volume</strong> sẽ bị xóa, nhưng những EBS volumes đính kèm vẫn giữ nguyên. Dữ liệu trong <strong>instance store volumes</strong> bị xóa.</p>
-</li>
-<li><p>Để ngăn chặn việc vô tình terminate instance, vô hiệu hóa instance termination.</p>
-</li>
-</ul>
-<h3 id="Root-Device-Volumes"><a href="#Root-Device-Volumes" class="headerlink" title="Root Device Volumes"></a>Root Device Volumes</h3><ul>
-<li><p>Root device volume chưa image dùng để khởi động instance.</p>
-</li>
-<li><p>Instance Store-backed Instances</p>
-<ul>
-<li>Mọi dữ liệu trên instance store volumes sẽ bị xóa khi instance bị terminated hoặc nếu nó không thành công </li>
-<li>Bạn cũng nên sao lưu dữ liệu quan trọng từ instance store volumes của bạn một cách thường xuyên.</li>
-</ul>
-</li>
-<li><p>Amazon EBS-backed Instances</p>
-<ul>
-<li><p>An Amazon EBS-backed instance có thể dừng lại và sau đó được khởi động lại mà không ảnh hưởng đến dữ liệu được lưu trữ trong các volumes đính kèm.</p>
-</li>
-<li><p>Khi ở trạng thái dừng, bạn có thể sửa đổi các thuộc tính của instance, thay đổi kích thước của nó hoặc cập nhật kernel mà nó đang sử dụng hoặc bạn có thể đính kèm root volume của mình vào một instance đang chạy khác để gỡ lỗi hoặc cho bất kỳ mục đích nào khác.</p>
-</li>
-<li><p>Mặc định, <strong>root device volume</strong> cho AMI backed by Amazon EBS bị xóa khi instance terminates.</p>
-</li>
-<li><p>Previously, to launch an encrypted EBS-backed EC2 instance from an unencrypted AMI, you would first need to create an encrypted copy of the AMI and use that to launch the EC2 instance. Now, you can launch encrypted EBS-backed EC2 instances from unencrypted AMIs directly.</p>
-</li>
-<li><p>Trước đây, để khởi chạy một instance EC2 được mã hóa EBS từ một AMI không được mã hóa, trước tiên bạn cần tạo một bản sao được mã hóa của AMI và sử dụng nó để khởi động instance EC2. Bây giờ, bạn có thể khởi chạy trực tiếp các instances EBS-backed EC2 được mã hóa từ các AMI không được mã hóa.</p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="AMI"><a href="#AMI" class="headerlink" title="AMI"></a>AMI</h3><ul>
-<li><p>Bao gồm:</p>
-<ul>
-<li><p>Template cho <strong>root volume</strong> cho instance (OS, application server, và applications)</p>
-</li>
-<li><p>Launch permissions kiểm soát tài khoản AWS nào có thể sử dụng AMI để khởi chạy instance</p>
-</li>
-<li><p>Block device mapping chỉ định các ổ đĩa để đính kèm vào instance khi nó khởi chạy</p>
-<p><img src="/images/AMI.jpg" alt></p>
-</li>
-</ul>
-</li>
-<li><p><strong>Backed by Amazon EBS</strong> – <strong>root device</strong> cho một instance được khởi chạy từ AMI là một <strong>Amazon EBS volume</strong>. AMIs backed by Amazon EBS snapshots có thể sử dụng mã hóa EBS.</p>
-</li>
-<li><p><strong>Backed by Instance Store</strong> –<strong>root device</strong> cho một instance được khởi chạy từ AMI là một <strong>instance store volume</strong> được tạo từ template lưu trữ trong S3.</p>
-</li>
-<li><p>Bạn có thể sao chép AMI sang các regions khác nhau.</p>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>Đặc điểm</th>
-<th>Amazon EBS-Backed</th>
-<th>Amazon Instance Store-Backed</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Thời gian Boot</td>
-<td>Thường ít hơn 1 phút</td>
-<td>Thường ít hơn 5 phút</td>
-</tr>
-<tr>
-<td>Giới hạn dữ liệu</td>
-<td>16TiB</td>
-<td>10TiB</td>
-</tr>
-<tr>
-<td>Upgrade Instance</td>
-<td>Có thể thay đổi instance type, kernel, ram… khi instance stop</td>
-<td>Không thể thay đổi thuộc tính của instance</td>
-</tr>
-<tr>
-<td>Phí tổn</td>
-<td>Tính phí cho phần sử dụng instance, sử dụng Amazon EBS volume và lưu trữ AMI</td>
-<td>Tính phí cho phần sử dụng instance và lưu AMI trên S3</td>
-</tr>
-<tr>
-<td>Tạo AMI</td>
-<td>Chỉ cần sử dụng 1 câu command</td>
-<td>Yêu cầu cài đặt và sử dụng AMI tools</td>
-</tr>
-<tr>
-<td>Stop State</td>
-<td>Instance có thể đưa về stop state</td>
-<td>Instance không thể đưa về stop state</td>
-</tr>
-</tbody></table>
-<h3 id="Pricing"><a href="#Pricing" class="headerlink" title="Pricing"></a>Pricing</h3><ul>
-<li><p><strong>On-Demand</strong>  –  bạn chỉ trả tiền cho dung lượng điện toán theo giờ hoặc theo giây, tùy theo phiên bản bạn chạy. Không cần cam kết lâu dài hoặc thanh toán trước. Bạn có thể tăng hoặc giảm dung lượng điện toán tùy theo nhu cầu của ứng dụng và chỉ phải trả tiền theo mức giờ được quy định cho phiên bản bạn sử dụng.</p>
-<p> On-Demand được đề xuất sử dụng cho:</p>
-<ul>
-<li>Người dùng muốn sử dụng Amazon EC2 với mức chi phí thấp và sự linh hoạt mà không phải thanh toán trước hay cam kết lâu dài</li>
-<li>Ứng dụng có khối lượng công việc ngắn hạn, mức độ sử dụng thay đổi hoặc không thể dự đoán trước và không thể gián đoạn</li>
-<li>Ứng dụng được phát triển hoặc chạy thử trên Amazon EC2 lần đầu tiên</li>
-</ul>
-</li>
-<li><p><strong>Reserved</strong> – Reserved đưa ra mức chiết khấu đáng kể (lên đến 75%) so với giá On-Demand.</p>
-<p>  Phiên bản dự trữ được đề xuất sử dụng cho:</p>
-<ul>
-<li>Ứng dụng có trạng thái ổn định</li>
-<li>Ứng dụng có thể cần dung lượng dự trữ</li>
-<li>Khách hàng có thể cam kết sử dụng EC2 trong thời hạn từ 1 đến 3 năm để giảm tổng chi phí điện toán</li>
-</ul>
-</li>
-<li><p><strong>Spot</strong> – cho phép bạn yêu cầu dung lượng điện toán Amazon EC2 dự phòng với mức giá thấp hơn tối đa 90% so với giá On-Demand.</p>
-<p> Spot được đề xuất sử dụng cho:</p>
-<ul>
-<li>Ứng dụng có thời gian bắt đầu và kết thúc linh hoạt</li>
-<li>Ứng dụng chỉ khả thi ớ mức giá điện toán cực kỳ thấp</li>
-<li>Người dùng có nhu cầu điện toán cấp thiết cho lượng lớn dung lượng bổ sung</li>
-</ul>
-</li>
-<li><p><strong>Dedicated Hosts</strong> – Máy chủ dành riêng là máy chủ EC2 vật lý dành riêng để bạn sử dụng. Máy chủ dành riêng có thể giúp bạn giảm chi phí bằng cách cho phép bạn sử dụng các giấy phép phần mềm gắn liền với máy chủ hiện có, bao gồm Windows Server, SQL Server và SUSE Linux Enterprise Server (tùy theo thời hạn giấy phép)</p>
-<ul>
-<li>Có thể mua On-Demand (giờ).</li>
-<li>Có thể mua dưới dạng Reserved với mức giá giảm lên đến 70% so với giá On-Demand.</li>
-</ul>
-</li>
-<li><p><strong>Dedicated Instances</strong> –  trả theo giờ cho các instance chạy trên single-tenant hardware.</p>
-</li>
-<li><p>Có phí chuyển dữ liệu khi sao chép AMI từ vùng này sang vùng khác</p>
-</li>
-<li><p>Giá EBS khác với giá instance. </p>
-</li>
-<li><p>AWS áp đặt một khoản phí nhỏ hàng giờ nếu Elastic IP address không được liên kết với một instance hoặc nếu nó được liên kết với một instance đang dừng.</p>
-</li>
-<li><p>Bạn phải trả phí cho bất kỳ Elastic IP addresses bổ sung nào được liên kết với một instance.</p>
-</li>
-</ul>
-<h3 id="Security"><a href="#Security" class="headerlink" title="Security"></a>Security</h3><ul>
-<li><p>Sử dụng <strong>IAM</strong> để kiểm soát quyền truy cập vào các instances.</p>
-<ul>
-<li>IAM policies</li>
-<li>IAM roles</li>
-</ul>
-</li>
-<li><p>Hạn chế truy cập bằng cách chỉ cho phép các máy chủ hoặc mạng đáng tin cậy truy cập vào các cổng trên instance.</p>
-</li>
-<li><p><strong>Security group</strong> hoạt động như một tường lửa ảo kiểm soát lưu lượng cho một hoặc nhiều instances.</p>
-<ul>
-<li><p>Tạo các security groups khác nhau cho các instance có yêu cầu bảo mật khác nhau.</p>
-</li>
-<li><p>Có thể thêm các quy tắc cho mỗi security gruop cho phép lưu lượng truy cập vào hoặc ra từ các instance được liên kết của nó.</p>
-</li>
-<li><p>Có thể chỉnh sửa các rules của security group bất cứ lúc nào.</p>
-</li>
-<li><p>Những rules mới sẽ được tự động áp dụng cho tất các instances đang liên kết với security group.</p>
-</li>
-<li><p>Tổng hợp tất cả các rules từ tất cả các security groups được liên kết với một instance để quyết định có cho phép lưu lượng truy cập hay không.</p>
-</li>
-<li><p>Mặc định security cho phép tất cả outbound traffic.</p>
-</li>
-<li><p>Security group rules luôn được cho phép, bạn không thể tạo ra các rules từ chối truy cập.</p>
-</li>
-<li><p>Security groups are stateful</p>
-</li>
-</ul>
-</li>
-<li><p>Nếu bạn không chỉ định security group khi khởi chạy instance, instance sẽ được tự động liên kết với <strong>default security group</strong> cho VPC, với các rules sau:</p>
-<ul>
-<li>Cho phép tất cả inbound traffic từ nhưng instances khác liên kết với default security group</li>
-<li>Cho phép tất cả outbound traffic từ instance.</li>
-</ul>
-</li>
-<li><p>Vô hiệu hóa thông tin đăng nhập dựa trên mật khẩu cho các instance được khởi chạy từ AMI của bạn, vì mật khẩu có thể bị bẻ khóa hoặc tìm thấy.</p>
-</li>
-</ul>
-<h3 id="Networking"><a href="#Networking" class="headerlink" title="Networking"></a>Networking</h3><ul>
-<li><p>Elastic IP address là một static IPv4 address được thiết kế cho dynamic cloud computing. </p>
-</li>
-<li><p>Bạn cần liên kết một Elastic IP address với instance của bạn để có thể kết nối với internet</p>
-</li>
-<li><p>Một Elastic IP address chỉ sử dụng trong một region.</p>
-</li>
-<li><p>Mặc định, tất cả tài khoản AWS bị hạn chế 5 Elastic IP addresses trong mỗi region.</p>
-</li>
-<li><p>Mặc định EC2 instances đi kèm với private IP.</p>
-</li>
-<li><p>Mỗi instance trong một VPC đều có một network interface mặc định, được gọi là <strong>primary network interface (eth0)</strong>, bạn không thể tách primary network interface khỏi instance.</p>
-</li>
-<li><p>Bạn có thể tạo và đính kèm bổ sung các network interfaces. Số lượng network interfaces tối đa phù thuộc vào loại instance.</p>
-</li>
-<li><p>Bạn có thể đính kèm một network interface cho một instance trong một subnet khác, miễn là nó cùng AZ</p>
-</li>
-<li><p>Network interface mặc định terminated khi instance terminated</p>
-</li>
-<li><p>Scale với EC2 Scaling Groups và phân phối lưu lượng giữa các instances sử dụng Elastic Load Balancer.</p>
-</li>
-</ul>
-<h3 id="Monitoring"><a href="#Monitoring" class="headerlink" title="Monitoring"></a>Monitoring</h3><ul>
-<li><p>Các mục EC2 để giám sát:</p>
-<ul>
-<li>CPU utilization, Network utilization, Disk performance, Disk Reads/Writes sử dụng <strong>EC2 metrics</strong></li>
-<li>Memory utilization, disk swap utilization, disk space utilization, page file utilization, log collection sử dụng <strong>monitoring agent/CloudWatch Logs</strong></li>
-</ul>
-</li>
-<li><p>Các công cụ giám sát tự động bao gồm:</p>
-<ul>
-<li><p><strong>System Status Checks</strong> – giám sát các hệ thống AWS cần có để sử dụng instance của bạn để đảm bảo chúng hoạt động tốt. Các kiểm tra này phát hiện các vấn đề với instance của bạn yêu cầu sự tham gia của AWS để sửa chữa.</p>
-</li>
-<li><p><strong>Instance Status Checks</strong> – giám sát phần mềm và cấu hình mạng của instance. Những kiểm tra này phát hiện các vấn đề đòi hỏi sự tham gia của bạn để sửa chữa.</p>
-</li>
-<li><p><strong>Amazon CloudWatch Alarms</strong> – giám sát một số liệu trong một khoảng thời gian bạn chỉ định và thực hiện một hoặc nhiều hành động dựa trên giá trị của số liệu liên quan đến một ngưỡng nhất định trong một số khoảng thời gian.</p>
-</li>
-<li><p><strong>Amazon CloudWatch Events</strong> – tự động hóa các dịch vụ AWS của bạn và tự động trả lời các sự kiện hệ thống.</p>
-</li>
-<li><p><strong>Amazon CloudWatch Logs</strong> – giám sát, lưu trữ và truy cập các tệp logs của bạn từ các instance Amazon EC2, AWS CloudTrail hoặc các nguồn khác.</p>
-</li>
-</ul>
-</li>
-<li><p>Giám sát EC2 instances với <strong>CloudWatch</strong>. Mặc định, EC2 gửi dữ liệu đến CloudWatch theo chu kì 5 phút.</p>
-</li>
-</ul>
-<h3 id="Instance-Metadata-and-User-Data"><a href="#Instance-Metadata-and-User-Data" class="headerlink" title="Instance Metadata and User Data"></a>Instance Metadata and User Data</h3><ul>
-<li><p><strong>Instance metadata</strong> là dữ liệu về instance của bạn, có thể sử dụng để cấu hình hoặc quản lý instance đang chạy.</p>
-</li>
-<li><p><strong>Instance metadata</strong> và <strong>user data</strong> không được bảo vệ bằng các phương pháp mã hóa.</p>
-</li>
-<li><p>Có thể truyền 2 loại user data cho EC2: shell scripts và cloud-init directives.</p>
-</li>
-<li><p>User data giới hạn tới 16 KB.</p>
-</li>
-<li><p>Nếu bạn dừng một instance, chỉnh sửa user data của nó rồi khởi động lại, user data được thay đổi sẽ không thực thi khi bạn khởi động instance</p>
-</li>
-</ul>
-<h3 id="Placement-Groups"><a href="#Placement-Groups" class="headerlink" title="Placement Groups"></a>Placement Groups</h3><ul>
-<li><p>Bạn có thể khởi chạy hoặc bắt đầu các instances trong một placement group.</p>
-<ul>
-<li><p><strong>Cluster</strong> – phân cụm các instances thành một nhóm có độ trễ thấp trong một Availability Zone.</p>
-</li>
-<li><p><strong>Partition</strong> – phân tán các instances của bạn trên các phân vùng logic sao cho các nhóm instances trong một phân vùng không chia sẻ phần cứng bên dưới với các nhóm instances trong các phân vùng khác nhau.</p>
-</li>
-<li><p><strong>Spread</strong> – tách các instances trên phần cứng cơ bản. Đề xuất cho các ứng dụng có một số lượng nhỏ các instance quan trọng cần được tách biệt với nhau.</p>
-</li>
-</ul>
-</li>
-<li><p>Rules:</p>
-<ul>
-<li><p>Tên bạn chỉ định cho một placement group phải là duy nhất trong tài khoản AWS của trong một region.</p>
-</li>
-<li><p>Bạn không thể hợp nhất các placement groups.</p>
-</li>
-<li><p>Một instance chỉ có thể khởi chạy trong một placement group tại một thời điểm.</p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="Storage"><a href="#Storage" class="headerlink" title="Storage"></a>Storage</h3><p><img src="/images/EC2-storage.jpg" alt></p>
-<ul>
-<li><p><strong>EBS - Elastic Block Store</strong></p>
-<ul>
-<li>Cung cấp <strong>block-level</strong> storage volumes lâu dài, bạn có thể đính kèm vào một instance.</li>
-<li>Sử dụng như một thiết bị lưu trữ chính cho dữ liệu yêu cầu cập nhật thường xuyên và chi tiết.</li>
-<li>Để giữ một bản sao lưu dữ liệu của bạn, hãy tạo một snapshot của một EBS, được lưu trữ trong S3. Bạn có thể tạo một EBS từ snapshot và đính kèm nó vào một instance khác.</li>
-</ul>
-</li>
-<li><p><strong>Instance Store</strong></p>
-<ul>
-<li>Cung cấp block-level storage tạm thời cho các instances.</li>
-<li>Dữ liệu trên instance store volume chỉ tồn tại trong suốt vòng đời của instance được liên kết, nếu bạn dừng hay chấm dứt một instance, tất cả dữ liệu trên instance store volume sẽ bị mất.</li>
-</ul>
-</li>
-<li><p><strong>EFS - Elastic File System</strong></p>
-<ul>
-<li>Cung cấp file storage có thể mở rộng để sử dụng với Amazon EC2. Bạn có thể tạo một hệ thống tệp EFS và định cấu hình instance của mình để gắn hệ thống tệp.</li>
-<li>You can use an EFS file system as a common data source for workloads and applications running on multiple instances.</li>
-<li>Bạn có thể sử dụng hệ thống tệp EFS làm nguồn dữ liệu chung cho workloads và ứng dụng chạy trên nhiều instance.</li>
-</ul>
-</li>
-<li><p><strong>S3</strong></p>
-<ul>
-<li>Cung cấp quyền truy cập vào cơ sở hạ tầng lưu trữ dữ liệu đáng tin cậy và giá rẻ.</li>
-<li>Lưu trữ EBS snapshots và instance store-backed AMIs.</li>
-</ul>
-</li>
-</ul>
-<h3 id="Resources-and-Tagging"><a href="#Resources-and-Tagging" class="headerlink" title="Resources and Tagging"></a>Resources and Tagging</h3><ul>
-<li><p>EC2 resources bao gồm images, instances, volumes, và snapshots. Khi bạn tạo một resource, AWS gán cho resource một ID duy nhất</p>
-</li>
-<li><p>Some resources can be used in all regions (global), and some resources are specific to the region or Availability Zone in which they reside.</p>
-</li>
-<li><p>Một vài resources có thể sử dụng trên tất cả regions, một vài resources chỉ sử dụng trong region hoặc AZ của nó.</p>
-</li>
-<li><p>Bạn có thể tùy ý gán metadata của riêng mình cho từng tài nguyên bằng các thẻ, bao gồm một khóa và một giá trị tùy chọn</p>
-</li>
+<li><a href="/categories/Overview/">AWS OVERVIEW</a></li>
+<li><a href="/categories/Compute-Services/">AWS COMPUTE SERVICES</a></li>
+<li><a href="/categories/Storage-Services/">AWS STORAGE SERVICES</a></li>
+<li>AWS DATABASE SERVICES</li>
+<li>AWS NETWORKING &amp; CONTENT DELIVERY</li>
+<li>AWS MIGRATION SERVICES</li>
+<li>AWS SECURITY &amp; IDENTITY SERVICES</li>
+<li>AWS MANAGEMENT TOOLS</li>
+<li>AWS ANALYTICS SERVICES</li>
+<li>AWS DEVELOPER TOOLS</li>
+<li>AWS BILLING AND COST MANAGEMENT</li>
+<li>AWS APPLICATION SERVICES</li>
+<li>AWS DESKTOP AND APP STREAMING</li>
+<li>AWS MACHINE LEARNING AND AI</li>
+<li>AWS DESKTOP AND APP STREAMING</li>
+<li>OTHER AWS SERVICES</li>
 </ul>
 <hr>
-<p>Sources:</p>
-<p><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/" target="_blank" rel="noopener">https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/</a></p>
-<p><a href="https://aws.amazon.com/ec2/features/" target="_blank" rel="noopener">https://aws.amazon.com/ec2/features/</a></p>
-<p><a href="https://aws.amazon.com/ec2/pricing/" target="_blank" rel="noopener">https://aws.amazon.com/ec2/pricing/</a></p>
-<p><a href="https://aws.amazon.com/ec2/faqs/" target="_blank" rel="noopener">https://aws.amazon.com/ec2/faqs/</a></p>
-
+<p>Chúc các bạn may mắn :v </p>
+<hr>
+<p>Nội dung được dịch từ: <a href="https://tutorialsdojo.com/aws-cheat-sheets/" target="_blank" rel="noopener">https://tutorialsdojo.com/aws-cheat-sheets/</a></p>
+<hr>
+<h2 id="Mr-Nara"><a href="#Mr-Nara" class="headerlink" title="Mr.Nara"></a>Mr.Nara</h2>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://leductienttkt.github.io/Compute-Services/ec2/" data-id="cjwg28t5c000esljmnsge1it8" class="article-share-link">Share</a>
+      <a data-url="https://leductienttkt.github.io/home/introduction/" data-id="cjzm6coro0003krjmk4dj2n0y" class="article-share-link">Share</a>
       
       
     </footer>
@@ -435,11 +122,14 @@
 
     
   
+  
+    
+  
 
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -450,7 +140,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Compute-Services/">Compute Services</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Overview/">Overview</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Compute-Services/">Compute Services</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Overview/">Overview</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Storage-Services/">Storage Services</a></li></ul>
     </div>
   </div>
 
@@ -465,7 +155,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li></ul>
     </div>
   </div>
 
@@ -478,23 +168,23 @@
       <ul>
         
           <li>
-            <a href="/Compute-Services/ec2/">Amazon Elastic Compute Cloud ( Amazon EC2 )</a>
-          </li>
-        
-          <li>
             <a href="/home/introduction/">AWS Cheat Sheets</a>
           </li>
         
           <li>
-            <a href="/Overview/disaster-recovery/">AWS Well-Architected Framework – Disaster Recovery</a>
+            <a href="/Storage-Services/s3/">Amazon S3</a>
+          </li>
+        
+          <li>
+            <a href="/Overview/aws-global-infrastructure/">AWS Global Infrastructure</a>
+          </li>
+        
+          <li>
+            <a href="/Overview/aws-pricing/">AWS Pricing</a>
           </li>
         
           <li>
             <a href="/Overview/design-principles/">AWS Well-Architected Framework – Design Principles</a>
-          </li>
-        
-          <li>
-            <a href="/Overview/five-pillars/">AWS Well-Architected Framework – Five Pillars</a>
           </li>
         
       </ul>
