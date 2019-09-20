@@ -57,19 +57,12 @@
         <section id="main">
   
     
-  
-  
-    
-      <article id="post-s3" class="article article-type-post" itemscope itemprop="blogPost">
+      <article id="post-introduction" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/Storage-Services/s3/" class="article-date">
-  <time datetime="2019-08-22T04:10:36.280Z" itemprop="datePublished">22-08-2019</time>
+    <a href="/home/introduction/" class="article-date">
+  <time datetime="2019-08-22T04:16:22.605Z" itemprop="datePublished">22-08-2019</time>
 </a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Storage-Services/">Storage Services</a>
-  </div>
-
   </div>
   <div class="article-inner">
     
@@ -78,7 +71,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/Storage-Services/s3/">Amazon S3</a>
+      <a class="article-title" href="/home/introduction/">AWS Cheat Sheets</a>
     </h1>
   
 
@@ -86,297 +79,39 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li>S3 lưu trữ dữ liệu dưới dạng <strong>objects</strong> trong các <strong>buckets</strong>.</li>
-<li>Một objects bao gồm một tệp và tùy chọn metadata mô tả tệp đó.</li>
-<li>Khóa là mã định danh duy nhất cho một objects trong bucket.</li>
-<li>Dung lượng lưu trữ hầu như không giới hạn.</li>
-</ul>
-<h3 id="Buckets"><a href="#Buckets" class="headerlink" title="Buckets"></a>Buckets</h3><ul>
-<li>Với mỗi bucket, bạn có thể:<ul>
-<li>Kiểm soát việc truy cập (tạo, xáo, hiển thị list objects trong bucket)</li>
-<li>Xem nhật ký truy cập cho nó và các objects của nó</li>
-<li>Chọn khu vực địa lý nơi lưu trữ bucket và nội dung của nó.</li>
-</ul>
-</li>
-<li>Tên bucket phải tuân thủ tên DNS và duy nhất.<ul>
-<li>Tên là duy nhất trong Amazon S3.</li>
-<li>Sau khi tạo bucket bạn không thể đổi tên.</li>
-<li>Tên bucket được hiển thị trong URL trỏ đến các objects mà bạn sẽ đặt trong bucket của mình.</li>
-</ul>
-</li>
-<li>Bạn có thể tạo 100 buckets với mỗi tài khoản Amazon</li>
-<li>Bạn không thể thay đổi Region sau khi tạo bucket</li>
-<li>Bạn có thể lưu trữ các trang web tĩnh bằng cách định cấu hình bucket của bạn như là website hosting.</li>
-</ul>
-<h3 id="Storage-Classes"><a href="#Storage-Classes" class="headerlink" title="Storage Classes"></a>Storage Classes</h3><ul>
-<li>Storage Classes cho các Objects thường xuyên truy cập<ul>
-<li>S3 STANDARD để lưu trữ dữ liệu thường xuyên truy cập.</li>
-<li>S3 REDUCED_REDUNDANCY (RRS) dành cho dữ liệu ít quan trọng, lặp lại, lưu trữ với mức độ dự phòng ít hơn so với STANDARD.  Không được đề xuất vì lớp lưu trữ STANDARD có hiệu quả hơn về chi phí.</li>
-</ul>
-</li>
-<li>Storage Classes cho các Objects không thường xuyên truy cập<ul>
-<li>S3 STANDARD_IA cho dữ liệu tồn tại lâu dài, nhưng ít được truy cập hơn. Nó lưu trữ dữ liệu  trên nhiều AZs.</li>
-<li>S3 ONEZONE_IA chỉ lưu trử dữ liệu trên một AZ. Rẻ hơn so với STANDARD_IA, nhưng dữ liệu không được phục hồi nếu có vấn đề ở AZ đang lưu trữ.</li>
-<li>Hai lớp lưu trữ này phù hợp với các đối tượng lớn hơn 128 KB mà bạn dự định lưu trữ trong ít nhất 30 ngày. Nếu một đối tượng nhỏ hơn 128 KB, Amazon S3 tính phí cho bạn là 128 KB. Nếu bạn xóa một đối tượng trước tối thiểu 30 ngày, bạn sẽ bị tính phí trong 30 ngày.</li>
-</ul>
-</li>
-<li>GLACIER<ul>
-<li>Để lưu trữ lâu dài</li>
-<li>Đối tượng lưu trữ không có sẵn để truy cập thời gian thực. Trước tiên bạn phải khôi phục các đối tượng trước khi bạn có thể truy cập chúng.</li>
-<li>Bạn không thể chỉ định GLACIER làm lớp lưu trữ tại thời điểm bạn tạo đối tượng.</li>
-<li>Glacier objects chỉ có thể được nhìn thấy thông qua S3.</li>
-<li>Tùy chọn truy xuất<ul>
-<li><strong>Expedited</strong> – cho phép bạn nhanh chóng truy cập dữ liệu của mình khi thỉnh thoảng yêu cầu khẩn cấp cho một tập hợp con lưu trữ được yêu cầu. Trừ các objects lớn, dữ liệu được truy cập thường được cung cấp trong vòng 1 đến 5 phút.</li>
-<li><strong>Standard</strong> – cho phép bạn truy cập bất kỳ đối tượng lưu trữ nào trong vòng vài giờ, thường là trong vòng 3 đến 5 giờ. Đây là tùy chọn mặc định.</li>
-<li><strong>Bulk</strong> – Tùy chọn truy xuất chi phí thấp nhất của Glacier, cho phép bạn truy xuất số lượng lớn, thậm chí cả petabyte dữ liệu trong một ngày. Việc truy xuất thường hoàn tất trong vòng 5 đến 12 giờ.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Đối với các lớp lưu trữ S3 Standard, S3 Standard-IA và Glacier, các objects của bạn được lưu trữ tự động trên nhiều thiết bị trên tối thiểu 3 Availability Zones.</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>Storage Class</th>
-<th>Storage Class</th>
-<th>Availability (designed for)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>STANDARD</td>
-<td>99.999999999%</td>
-<td>99.99%</td>
-</tr>
-<tr>
-<td>STANDARD_IA</td>
-<td>99.999999999%</td>
-<td>99.9%</td>
-</tr>
-<tr>
-<td>ONEZONE_IA</td>
-<td>99.999999999%</td>
-<td>99.95%</td>
-</tr>
-<tr>
-<td>GLACIER</td>
-<td>99.999999999%</td>
-<td>99.99%</td>
-</tr>
-<tr>
-<td>RRS</td>
-<td>99.99%</td>
-<td>99.99%</td>
-</tr>
-</tbody></table>
-<h3 id="Bucket-Configurations"><a href="#Bucket-Configurations" class="headerlink" title="Bucket Configurations"></a>Bucket Configurations</h3><table>
-<thead>
-<tr>
-<th></th>
-<th>Mô tả</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>location</td>
-<td>Chỉ định Region nơi bạn muốn S3 tạo bucket</td>
-</tr>
-<tr>
-<td>policy and ACL (access control list)</td>
-<td>Mặc định thì tất cả tài nguyên của bạn là private. Sữ dụng bucket policy và ACL để cấp và quản lí quyền ở mức bucket</td>
-</tr>
-<tr>
-<td>cors (cross-origin resource sharing)</td>
-<td>Bạn có thể định cấu hình buvket của mình để cho phép các cross-origin</td>
-</tr>
-<tr>
-<td>website</td>
-<td>Bạn có thể cấu hình bucket cho các trong web tĩnh</td>
-</tr>
-<tr>
-<td>logging</td>
-<td>Ghi nhật ký cho phép bạn theo dõi các yêu cầu truy cập vào bucket của bạn. Mỗi bản ghi nhật ký truy cập cung cấp chi tiết về một yêu cầu truy cập, chẳng hạn như người yêu cầu, tên bucket, thời gian yêu cầu, hành động yêu cầu, trạng thái phản hồi và mã lỗi, nếu có.</td>
-</tr>
-<tr>
-<td>event notification</td>
-<td>Bạn có thể kích hoạt bucket của bạn để gửi cho bạn thông báo về các sự kiện bucket được chỉ định.</td>
-</tr>
-<tr>
-<td>versioning</td>
-<td>AWS khuyến nghị VERSIONING như một  BEST PRACTICE để khôi phục các đối tượng khỏi bị xóa hoặc ghi đè do nhầm lẫn.</td>
-</tr>
-<tr>
-<td>lifecycle</td>
-<td>Bạn có thể xác định quy tắc vòng đời cho các đối tượng trong bucket.</td>
-</tr>
-<tr>
-<td>cross-region replication</td>
-<td>cross-region replication tự đông, sao chép các đối tượng trên các bucket trong các Vùng AWS khác nhau.</td>
-</tr>
-<tr>
-<td>tagging</td>
-<td>Lưu trữ và quản lí tags trên các bucket.  AWS tạo báo cáo phân bổ chi phí với mức sử dụng và chi phí được tổng hợp bởi các thẻ của bạn.</td>
-</tr>
-<tr>
-<td>requestPayment</td>
-<td>Theo mặc định, tài khoản AWS tạo bucket trả tiền cho các lượt tải xuống từ bucket. Chủ sở hữu bucket có thể chỉ định rằng người yêu cầu tải xuống sẽ bị tính phí cho việc tải xuống.</td>
-</tr>
-<tr>
-<td>transfer acceleration</td>
-<td>Cho phép chuyển các tệp nhanh chóng, dễ dàng và an toàn trong khoảng cách xa giữa máy khách của bạn và nhóm S3.</td>
-</tr>
-</tbody></table>
-<h3 id="Objects"><a href="#Objects" class="headerlink" title="Objects"></a>Objects</h3><ul>
-<li>Mặc định là <strong>private</strong>.</li>
-<li>Mỗi S3 object bao gồm data, key và metadata.</li>
-<li>Bạn không thể chỉnh sửa object metadata sau khi object đã được tải lên.</li>
-<li>Có 2 loại metadata<ul>
-<li>Metadata do người dùng xác định.</li>
-<li>System metadata:</li>
-</ul>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>Tên</th>
-<th>Mô tả</th>
-<th>Có thể chỉnh sửa giá trị?</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Date</td>
-<td>Ngày giờ hiện tại</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Content-Length</td>
-<td>Object size (bytes)</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Last-Modified</td>
-<td>Ngày tạo đối tượng hoặc ngày sửa đổi cuối cùng, tùy theo ngày nào là muộn nhất.</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Content-MD5</td>
-<td>base64-encoded 128-bit MD5 digest của object</td>
-<td>No</td>
-</tr>
-<tr>
-<td>x-amz-server-side-encryption</td>
-<td>Cho biết liệu mã hóa phía máy chủ có được bật cho đối tượng hay không và liệu mã hóa đó là từ Dịch vụ quản lý khóa AWS (SSE-KMS) hay từ mã hóa được quản lý AWS (SSE-S3).</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>x-amz-version-id</td>
-<td>Phiên bản đối tượng. Khi bạn bật versioning trên một bucket, Amazon S3 chỉ định số phiên bản cho các đối tượng được thêm vào bucket.</td>
-<td>No</td>
-</tr>
-<tr>
-<td>x-amz-delete-marker</td>
-<td>Trong một bucket có bật versioning, marker Boolean này cho biết đối tượng có phải là đã xóa hay không.</td>
-<td>No</td>
-</tr>
-<tr>
-<td>x-amz-storage-class</td>
-<td>Storage class sữ dụng để lưu trữ object.</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>x-amz-website-redirect-location</td>
-<td>Chuyển hướng yêu cầu cho đối tượng được liên kết đến một đối tượng khác trong cùng một nhóm hoặc một URL bên ngoài.</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>x-amz-server-side-encryption-aws-kms-key-id</td>
-<td>Nếu mã hóa phía x-amz-server-server có mặt và có giá trị aws: kms, thì điều này cho biết ID của khóa mã hóa chính AWS Key Management Service  (AWS KMS) được sử dụng cho đối tượng</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>x-amz-server-side-encryption-customer-algorithm</td>
-<td>Cho biết liệu mã hóa phía máy chủ có khóa mã hóa do khách hàng cung cấp (SSE-C) có được bật hay không.</td>
-<td>Yes</td>
-</tr>
-</tbody></table>
-<ul>
-<li><p>Bạn có thể tải lên và sao chép các đối tượng có kích thước tối đa 5 GB trong một thao tác. Đối với các đối tượng lớn hơn 5 GB đến 5 TB, bạn phải sử dụng multipart upload API.</p>
-</li>
-<li><p>Tagging - Gắn thẻ</p>
-<ul>
-<li>Bạn có thể liên kết tối đa 10 thẻ với một đối tượng. Các thẻ được liên kết với một đối tượng phải có các khóa thẻ duy nhất.</li>
-<li>Khóa thẻ có thể dài tối đa 128 ký tự Unicode và giá trị thẻ có thể dài tối đa 256 ký tự Unicode.</li>
-<li>Khóa và giá trị phân biệt hoa thường.</li>
-</ul>
-</li>
-<li><p>Xóa Object</p>
-<ul>
-<li>Xóa object trong Version-Enabled Bucket<ul>
-<li>non-versioned delete request - chỉ chỉ định object key, không chỉ định version ID</li>
-<li>versioned delete request – chỉ định cả object key và version ID</li>
-</ul>
-</li>
-<li>Xóa object trong MFA-Enabled Bucket<ul>
-<li>Nếu bạn cung cấp mã MFA không hợp lệ, yêu cầu luôn thất bại.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Quản lí Lifecycle</p>
-<ul>
-<li>Cấu hình vòng đời là một tập hợp các quy tắc xác định các hành động được áp dụng cho một nhóm đối tượng.<ul>
-<li>Transition actions - Xác định khi nào các đối tượng chuyển sang một lớp lưu trữ khác. Đối với S3-IA và S3-One-Zone, các đối tượng phải được lưu trữ ít nhất 30 ngày trong lớp lưu trữ hiện tại trước khi bạn có thể chuyển chúng sang lớp khác.</li>
-<li>Expiration actions - Xác định khi đối tượng hết hạn. S3 sẽ xóa các đối tượng đã hết hạn thay bạn.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><img src="/images/Amazon-S3-1.jpg" alt></p>
-<h3 id="Pricing"><a href="#Pricing" class="headerlink" title="Pricing"></a>Pricing</h3><ul>
-<li>S3 chỉ tính phí cho những gì bạn thực sự sử dụng, không có phí ẩn và không có phí quá cước</li>
-<li>Không tính phí cho việc tạo một bucket, mà chỉ tính khi lưu trữ các đối tượng trong bucket và chuyển các đối tượng vào và ra khỏi bucket.</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>Charge</th>
-<th>Comments</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Storage</td>
-<td>Bạn trả tiền cho việc lưu trữ các đối tượng trong bucket S3 của bạn. Mức phí tùy thuộc vào kích thước đối tượng của bạn, thời gian bạn lưu trữ các đối tượng và lớp lưu trữ.</td>
-</tr>
-<tr>
-<td>Requests</td>
-<td>Bạn trả tiền cho các yêu cầu, ví dụ, các yêu cầu GET, được thực hiện đối với các bucket và đối tượng S3 của bạn. Điều này bao gồm các yêu cầu vòng đời. Mức phí cho các yêu cầu tùy thuộc vào loại yêu cầu mà bạn thực hiện.</td>
-</tr>
-<tr>
-<td>Retrievals</td>
-<td>Bạn trả tiền để truy xuất các đối tượng được lưu trữ trong bộ lưu trữ STANDARD_IA, ONEZONE_IA và GLACIER.</td>
-</tr>
-<tr>
-<td>Early Deletes</td>
-<td>Nếu bạn xóa một đối tượng được lưu trữ trong bộ lưu trữ STANDARD_IA, ONEZONE_IA hoặc GLACIER trước thời hạn cam kết lưu trữ tối thiểu, bạn phải trả phí xóa sớm cho đối tượng đó.</td>
-</tr>
-<tr>
-<td>Storage Management</td>
-<td>Bạn trả tiền cho các tính năng quản lý lưu trữ được bật trên các buckets của bạn.</td>
-</tr>
-<tr>
-<td>Bandwidth</td>
-<td>Bạn trả tiền cho tất cả băng thông vào và ra S3, ngoại trừ các trường hợp sau: Dữ liệu được truyền vào từ internet, dữ liệu được chuyển ra một Amazon EC2 instance, khi phiên bản đó nằm trong cùng Vùng AWS với bucket S3, dữ liệu được chuyển ra Amazon CloudFront</td>
-</tr>
-</tbody></table>
+        <p><strong>AWS Cheat Sheets</strong> được tạo ra để cung cấp cho bạn cái nhìn toàn cảnh về các dịch vụ AWS quan trọng mà bạn cần biết để có thể vượt qua kỳ thi <strong>AWS Certified Solutions Architect Associate</strong> rất khó khăn cũng như các kỳ thi chứng chỉ AWS khác.</p>
+<p>Nó được trình bày chủ yếu ở dạng các gạch đầu dòng để cung cấp cho bạn các ghi chú dễ nhớ sẽ giúp bạn hiểu rõ hơn về các dịch vụ AWS khác nhau.</p>
+<p>Mặc dù <strong>AWS Cheat Sheets</strong> này sẽ giúp bạn tiết kiệm thời gian trong việc duyệt qua tất cả các tài liệu AWS, nhưng bạn cũng nên đọc chúng cũng như các <strong>whitepapers</strong> để bổ sung cho các bài thi của bạn.</p>
+<p>Cuối cùng, nên trả lời càng nhiều <strong>practice test questions</strong> càng tốt để tăng thêm cơ hội vượt qua bài kiểm tra.</p>
 <hr>
-<p>to be continued….</p>
-
+<ul>
+<li><a href="/categories/Overview/">AWS OVERVIEW</a></li>
+<li><a href="/categories/Compute-Services/">AWS COMPUTE SERVICES</a></li>
+<li><a href="/categories/Storage-Services/">AWS STORAGE SERVICES</a></li>
+<li>AWS DATABASE SERVICES</li>
+<li>AWS NETWORKING &amp; CONTENT DELIVERY</li>
+<li>AWS MIGRATION SERVICES</li>
+<li>AWS SECURITY &amp; IDENTITY SERVICES</li>
+<li>AWS MANAGEMENT TOOLS</li>
+<li>AWS ANALYTICS SERVICES</li>
+<li>AWS DEVELOPER TOOLS</li>
+<li>AWS BILLING AND COST MANAGEMENT</li>
+<li>AWS APPLICATION SERVICES</li>
+<li>AWS DESKTOP AND APP STREAMING</li>
+<li>AWS MACHINE LEARNING AND AI</li>
+<li>AWS DESKTOP AND APP STREAMING</li>
+<li>OTHER AWS SERVICES</li>
+</ul>
+<hr>
+<p>Chúc các bạn may mắn :v </p>
+<hr>
+<p>Nội dung được dịch từ: <a href="https://tutorialsdojo.com/aws-cheat-sheets/" target="_blank" rel="noopener">https://tutorialsdojo.com/aws-cheat-sheets/</a></p>
+<hr>
+<h2 id="Mr-Nara"><a href="#Mr-Nara" class="headerlink" title="Mr.Nara"></a>Mr.Nara</h2>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://leductienttkt.github.io/Storage-Services/s3/" data-id="cjzm6cosg000dkrjmu1wsljb5" class="article-share-link">Share</a>
+      <a data-url="https://leductienttkt.github.io/home/introduction/" data-id="ck0rte6070005uejms69k3hyb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -387,11 +122,14 @@
 
     
   
+  
+    
+  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -417,7 +155,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li></ul>
     </div>
   </div>
 
@@ -430,6 +168,10 @@
       <ul>
         
           <li>
+            <a href="/Storage-Services/ebs/">Amazon EBS - Amazon Elastic Block Store</a>
+          </li>
+        
+          <li>
             <a href="/home/introduction/">AWS Cheat Sheets</a>
           </li>
         
@@ -438,15 +180,11 @@
           </li>
         
           <li>
-            <a href="/Overview/aws-global-infrastructure/">AWS Global Infrastructure</a>
+            <a href="/Overview/design-principles/">AWS Well-Architected Framework – Design Principles</a>
           </li>
         
           <li>
             <a href="/Overview/aws-pricing/">AWS Pricing</a>
-          </li>
-        
-          <li>
-            <a href="/Overview/design-principles/">AWS Well-Architected Framework – Design Principles</a>
           </li>
         
       </ul>
