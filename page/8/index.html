@@ -60,9 +60,9 @@
   
   
     
-      <article id="post-five-pillars" class="article article-type-post" itemscope itemprop="blogPost">
+      <article id="post-aws-global-infrastructure" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/Overview/five-pillars/" class="article-date">
+    <a href="/Overview/aws-global-infrastructure/" class="article-date">
   <time datetime="2019-06-17T03:38:20.382Z" itemprop="datePublished">17-06-2019</time>
 </a>
     
@@ -78,7 +78,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/Overview/five-pillars/">AWS Well-Architected Framework – Five Pillars</a>
+      <a class="article-title" href="/Overview/aws-global-infrastructure/">AWS Global Infrastructure</a>
     </h1>
   
 
@@ -86,80 +86,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/AWS-Well-Architected-Framework-Five-Pillars.jpg" alt></p>
-<h3 id="1-Operational-Excellence"><a href="#1-Operational-Excellence" class="headerlink" title="1. Operational Excellence"></a>1. Operational Excellence</h3><ul>
-<li><p>Khả năng chạy và giám sát các hệ thống để cung cấp giá trị kinh doanh và liên tục cải thiện các quy trình và thủ tục hỗ trợ.</p>
-</li>
-<li><p>Có 3 lĩnh vực và công cụ thực hành tốt nhất cho operational excellence:</p>
-<ol>
-<li>Prepare – AWS Config</li>
-<li>Operate – Amazon CloudWatch</li>
-<li>Evolve – Amazon Elasticsearch Service</li>
-</ol>
-</li>
-<li><p>Key AWS service: <strong>AWS CloudFormation</strong> </p>
-</li>
+        <p>Đám mây AWS trải rộng trên <strong>66 Availability Zones</strong> tại <strong>21 Geographic Regions</strong> trên khắp thế giới, với các kế hoạch đã thông báo cho thêm <strong>12 Availability Zones</strong> và thêm <strong>4 Geographic Regions</strong> khác tại Bahrain, Cape Town, Jakarta và Milan.</p>
+<p><img src="/images/aws_global.png" alt></p>
+<p>Các <strong>Regions</strong> cung cấp nhiều <strong>Availability Zones</strong> cô lập và tách biệt về mặt vật lý được kết nối với <strong>low latency</strong>, <strong>high throughput</strong> và <strong>highly redundant networking</strong></p>
+<p>Các <strong>Availability Zones</strong> cung cấp tính sẵn sàng cao (<strong>highly availability</strong>), khả năng chịu lỗi (<strong>fault tolerance</strong>) và khả năng mở rộng (<strong>scalability</strong>).</p>
+<ul>
+<li>Bao gồm một hoặc nhiều trung tâm dữ liệu riêng biệt, mỗi trung tâm có nguồn điện dự phòng, kết nối mạng được đặt trong các cơ sở riêng biệt.</li>
+<li>Availability Zones được thể hiện bằng mã vùng theo sau là mã định danh; ví dụ: us-east-1a.</li>
 </ul>
-<h3 id="2-Security"><a href="#2-Security" class="headerlink" title="2. Security"></a>2. Security</h3><ul>
-<li><p>Khả năng bảo vệ thông tin, hệ thống và tài sản trong khi cung cấp giá trị kinh doanh thông qua các đánh giá rủi ro và chiến lược giảm thiểu.</p>
-</li>
-<li><p>Có 5 lĩnh vực và công cụ thực hành tốt nhất để bảo mật:</p>
-<ol>
-<li>Identity and Access Management – IAM, Multi-Factor Authentication, AWS Organizations</li>
-<li>Detective Controls – AWS CloudTrail, AWS Config, Amazon GuardDuty</li>
-<li>Infrastructure Protection – Amazon VPC, Amazon CloudFront with AWS Shield, AWS WAF</li>
-<li>Data Protection – ELB, Amazon Elastic Block Store (Amazon EBS), Amazon S3, and Amazon Relational Database Service (Amazon RDS) encryption, Amazon Macie, AWS Key Management Service (AWS KMS)</li>
-<li>Incident Response – IAM, Amazon CloudWatch Events</li>
-</ol>
-</li>
-<li><p>Key AWS service: <strong>AWS Identity and Access Management (IAM)</strong></p>
-</li>
-</ul>
-<h3 id="3-Reliability"><a href="#3-Reliability" class="headerlink" title="3. Reliability"></a>3. Reliability</h3><ul>
-<li><p>Khả năng của một hệ thống phục hồi từ sự gián đoạn cơ sở hạ tầng hoặc dịch vụ, tự động có được tài nguyên để đáp ứng nhu cầu và giảm thiểu sự gián đoạn như cấu hình sai hoặc các sự cố mạng tạm thời.</p>
-</li>
-<li><p>Có 3 lĩnh vực và công cụ thực hành tốt nhất cho reliability:</p>
-<ol>
-<li>Foundations – IAM, Amazon VPC, AWS Trusted Advisor, AWS Shield</li>
-<li>Change Management – AWS CloudTrail, AWS Config, Auto Scaling, Amazon CloudWatch</li>
-<li>Failure Management – AWS CloudFormation, Amazon S3, AWS KMS, Amazon Glacier</li>
-</ol>
-</li>
-<li><p>Key AWS service: <strong>Amazon CloudWatch</strong></p>
-</li>
-</ul>
-<h3 id="4-Performance-Efficiency"><a href="#4-Performance-Efficiency" class="headerlink" title="4. Performance Efficiency"></a>4. Performance Efficiency</h3><ul>
-<li><p>Khả năng sử dụng tài nguyên điện toán hiệu quả để đáp ứng các yêu cầu hệ thống và duy trì hiệu quả đó khi nhu cầu thay đổi và công nghệ phát triển. </p>
-</li>
-<li><p>Có 4 lĩnh vực và công cụ thực hành tốt nhất cho performance efficiency:</p>
-<ol>
-<li>Selection – Auto Scaling for Compute, Amazon EBS and S3 for Storage, Amazon RDS and DynamoDB for Database, Route53, VPC, and AWS Direct Connect for Network</li>
-<li>Review – AWS Blog and What’s New section of the website</li>
-<li>Monitoring –  Amazon CloudWatch</li>
-<li>Tradeoffs – Amazon Elasticache, Amazon CloudFront, AWS Snowball, Amazon RDS read replicas.</li>
-</ol>
-</li>
-<li><p>Key AWS service: <strong>Amazon CloudWatch</strong></p>
-</li>
-</ul>
-<h3 id="5-Cost-Optimization"><a href="#5-Cost-Optimization" class="headerlink" title="5. Cost Optimization"></a>5. Cost Optimization</h3><ul>
-<li>Khả năng tránh hoặc loại bỏ chi phí không cần thiết hoặc tài nguyên dưới mức tối ưu.</li>
-<li>Có 4 lĩnh vực và công cụ thực hành tốt nhất cho cost optimization:<ol>
-<li>Cost-Effective Resources – Cost Explorer, Amazon CloudWatch and Trusted Advisor, Amazon Aurora for RDS, AWS Direct Connect with Amazon CloudFront</li>
-<li>Matching supply and demand – Auto Scaling</li>
-<li>Expenditure Awareness –  AWS Cost Explorer, AWS Budgets</li>
-<li>Optimizing Over Time – AWS News Blog and the What’s New section on the AWS website, AWS Trusted Advisor</li>
-</ol>
-</li>
-<li>Key AWS service: <strong>Cost Explorer</strong></li>
-</ul>
+<p><img src="/images/AWS-Regions-and-Availability-Zones.jpg" alt></p>
 <hr>
-<p>Source:<br><a href="https://d1.awsstatic.com/whitepapers/architecture/AWS_Well-Architected_Framework.pdf" target="_blank" rel="noopener">https://d1.awsstatic.com/whitepapers/architecture/AWS_Well-Architected_Framework.pdf</a></p>
+<p>Sources:<br><a href="https://aws.amazon.com/about-aws/global-infrastructure/" target="_blank" rel="noopener">https://aws.amazon.com/about-aws/global-infrastructure/</a><br><a href="https://docs.aws.amazon.com/aws-technical-content/latest/aws-overview/global-infrastructure.html" target="_blank" rel="noopener">https://docs.aws.amazon.com/aws-technical-content/latest/aws-overview/global-infrastructure.html</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://leductienttkt.github.io/Overview/five-pillars/" data-id="ck20a7wyu0004i7jm2l2cptp4" class="article-share-link">Share</a>
+      <a data-url="https://leductienttkt.github.io/Overview/aws-global-infrastructure/" data-id="ck4i7pi5s0003egjm3m3b5xrj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -174,7 +116,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/7/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/9/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/7/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/9/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -200,7 +142,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li></ul>
     </div>
   </div>
 
@@ -211,6 +153,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/Storage-Services/snowball/">AWS Snowball</a>
+          </li>
         
           <li>
             <a href="/Storage-Services/glacier/">Amazon Glacier</a>
@@ -226,10 +172,6 @@
         
           <li>
             <a href="/home/introduction/">AWS Cheat Sheets</a>
-          </li>
-        
-          <li>
-            <a href="/Overview/aws-global-infrastructure/">AWS Global Infrastructure</a>
           </li>
         
       </ul>

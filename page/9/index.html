@@ -60,9 +60,9 @@
   
   
     
-      <article id="post-design-principles" class="article article-type-post" itemscope itemprop="blogPost">
+      <article id="post-disaster-recovery" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/Overview/design-principles/" class="article-date">
+    <a href="/Overview/disaster-recovery/" class="article-date">
   <time datetime="2019-06-17T03:38:20.382Z" itemprop="datePublished">17-06-2019</time>
 </a>
     
@@ -78,7 +78,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/Overview/design-principles/">AWS Well-Architected Framework – Design Principles</a>
+      <a class="article-title" href="/Overview/disaster-recovery/">AWS Well-Architected Framework – Disaster Recovery</a>
     </h1>
   
 
@@ -86,83 +86,57 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-Scalability"><a href="#1-Scalability" class="headerlink" title="1. Scalability"></a>1. Scalability</h3><ul>
-<li>Scaling Horizontally – sự gia tăng số lượng tài nguyên</li>
-<li>Scaling Vertically –  sự gia tăng các thông số kỹ thuật của một tài nguyên riêng lẻ.</li>
-</ul>
-<h3 id="2-Disposable-Resources-Instead-of-Fixed-Servers"><a href="#2-Disposable-Resources-Instead-of-Fixed-Servers" class="headerlink" title="2. Disposable Resources Instead of Fixed Servers"></a>2. Disposable Resources Instead of Fixed Servers</h3><ul>
-<li>Instantiating Compute Resources – tự động thiết lập tài nguyên mới cùng với cấu hình và code của chúng</li>
-<li>Infrastructure as Code – AWS assets có thể lập trình. Bạn có thể áp dụng các kỹ thuật, kinh nghiệm và công cụ từ phát triển phần mềm để làm cho toàn bộ cơ sở hạ tầng của bạn có thể sử dụng lại, có thể bảo trì, mở rộng và kiểm tra được.</li>
-</ul>
-<h3 id="3-Automation"><a href="#3-Automation" class="headerlink" title="3. Automation"></a>3. Automation</h3><ul>
-<li>Serverless Management and Deployment – Tự động hóa việc triển khai mã của bạn. AWS xử lý các nhiệm vụ quản lý cho bạn.</li>
-<li>Infrastructure Management and Deployment – AWS tự động xử lý các chi tiết, như cung cấp tài nguyên, cân bằng tải, tự động mở rộng và giám sát, do đó bạn có thể tập trung vào triển khai tài nguyên.</li>
-<li>Alarms and Events – Các dịch vụ AWS sẽ liên tục theo dõi tài nguyên của bạn và bắt đầu các sự kiện khi các số liệu hoặc điều kiện nhất định được đáp ứng.</li>
-</ul>
-<h3 id="4-Loose-Coupling"><a href="#4-Loose-Coupling" class="headerlink" title="4. Loose Coupling"></a>4. Loose Coupling</h3><ul>
-<li>Well-Defined Interfaces – giảm sự phụ thuộc lẫn nhau trong một hệ thống bằng cách cho phép các thành phần khác nhau chỉ tương tác với nhau thông qua các công nghệ cụ thể, như API RESTful.</li>
-<li>Service Discovery – các ứng dụng được triển khai như một tập hợp các dịch vụ nhỏ hơn sẽ có thể được sử dụng mà không cần biết trước về các chi tiết cấu trúc mạng của chúng. Ngoài việc che giấu sự phức tạp, điều này cũng cho phép các chi tiết cơ sở hạ tầng thay đổi bất cứ lúc nào.</li>
-<li>Asynchronous Integration – các thành phần tương tác không cần phản hồi ngay lập tức.</li>
-<li>Distributed Systems Best Practices</li>
-</ul>
-<h3 id="5-Services-Not-Servers"><a href="#5-Services-Not-Servers" class="headerlink" title="5. Services, Not Servers"></a>5. Services, Not Servers</h3><ul>
-<li>Managed Services – cung cấp services mà nhà phát triển có thể sử dụng  cho các ứng dụng của họ, chẳng hạn như cdatabases, machine learning, analytics, queuing, search, email, notifications, v.v.</li>
-<li>Serverless Architectures – cho phép bạn xây dựng cả các dịch vụ theo hướng sự kiện và đồng bộ mà không cần quản lý cơ sở hạ tầng máy chủ, điều này có thể làm giảm độ phức tạp hoạt động của các ứng dụng đang chạy.</li>
-</ul>
-<h3 id="6-Databases"><a href="#6-Databases" class="headerlink" title="6. Databases"></a>6. Databases</h3><ul>
-<li>Chọn công nghệ cơ sở dữ liệu phù hợp cho từng công việc.</li>
-<li>Relational Databases cung cấp một ngôn ngữ truy vấn mạnh mẽ, khả năng lập chỉ mục linh hoạt, kiểm soát toàn vẹn mạnh mẽ và khả năng kết hợp dữ liệu từ nhiều bảng một cách nhanh chóng và hiệu quả.</li>
-<li>NoSQL Databases trao đổi một số khả năng truy vấn và giao dịch của cơ sở dữ liệu quan hệ để có mô hình dữ liệu linh hoạt hơn, quy mô theo chiều ngang. Nó sử dụng nhiều mô hình dữ liệu, bao gồm biểu đồ, cặp giá trị khóa và tài liệu JSON và được công nhận rộng rãi để dễ phát triển, hiệu suất có thể mở rộng, tính sẵn sàng cao và khả năng phục hồi.</li>
-<li>Data Warehouses là một loại cơ sở dữ liệu quan hệ chuyên biệt, được tối ưu hóa để phân tích và báo cáo một lượng lớn dữ liệu.</li>
-<li>Graph Databases sử dụng cấu trúc biểu đồ cho các truy vấn.</li>
-</ul>
-<h3 id="7-Managing-Increasing-Volumes-of-Data"><a href="#7-Managing-Increasing-Volumes-of-Data" class="headerlink" title="7. Managing Increasing Volumes of Data"></a>7. Managing Increasing Volumes of Data</h3><ul>
-<li>Data Lake – một cách tiếp cận kiến trúc cho phép bạn lưu trữ một lượng lớn dữ liệu ở một vị trí trung tâm để nó có sẵn để được phân loại, xử lý, phân tích và tiêu thụ bởi các nhóm khác nhau trong tổ chức của bạn.</li>
-</ul>
-<h3 id="8-Removing-Single-Points-of-Failure"><a href="#8-Removing-Single-Points-of-Failure" class="headerlink" title="8. Removing Single Points of Failure"></a>8. Removing Single Points of Failure</h3><ul>
-<li><p>Introducing Redundancy</p>
+        <ul>
+<li><p><strong>RTO</strong> là thời gian cần thiết sau khi bị gián đoạn để khôi phục.</p>
+</li>
+<li><p><strong>RPO</strong> là lượng mất dữ liệu chấp nhận được đo theo thời gian.</p>
+</li>
+<li><p>Disaster Recovery With AWS</p>
 <ul>
-<li>Standby redundancy – khi tài nguyên bị lỗi, chức năng được phục hồi trên tài nguyên thứ cấp với quá trình chuyển đổi dự phòng. Việc chuyển đổi dự phòng thường yêu cầu một thời gian trước khi hoàn thành và trong giai đoạn này, tài nguyên vẫn không có sẵn. Điều này thường được sử dụng cho các thành phần trạng thái như cơ sở dữ liệu quan hệ.</li>
-<li>Active redundancy – các yêu cầu được phân phối cho nhiều tài nguyên tính toán dự phòng. Khi một trong số chúng thất bại, phần còn lại sẽ xử lí một phần khối lượng công việc lớn hơn.</li>
+<li><p><strong>Backup and Restore</strong> – lưu trữ dữ liệu sao lưu trên S3 và khôi phục dữ liệu nhanh chóng và đáng tin cậy.</p>
+<p><img src="/images/Disaster-Recovery-1.jpg" alt></p>
+</li>
+<li><p><strong>Pilot Light</strong> for Quick Recovery into AWS – thời gian phục hồi nhanh hơn so với <strong>Backup and Restore</strong> vì các phần cốt lõi của hệ thống đã chạy và liên tục được cập nhật.</p>
+<p> <img src="/images/Disaster-Recovery-2.jpg" alt><br> <img src="/images/Disaster-Recovery-3.jpg" alt></p>
+</li>
+<li><p><strong>Warm Standby Solution</strong> – phiên bản thu nhỏ của một môi trường đầy đủ chức năng luôn chạy trong cloud.</p>
+<p> <img src="/images/Disaster-Recovery-4.jpg" alt><br> <img src="/images/Disaster-Recovery-5.jpg" alt></p>
+</li>
+<li><p><strong>Multi-Site Solution</strong> – chạy cơ sở hạ tầng của bạn trên một site khác.</p>
+<p> <img src="/images/Disaster-Recovery-6.jpg" alt><br> <img src="/images/Disaster-Recovery-7.jpg" alt></p>
+</li>
+<li><p>AWS Production to an AWS DR Solution Using Multiple AWS Regions – tận dụng lợi thế của AWS multiple availability zones.</p>
+</li>
 </ul>
 </li>
-<li><p>Detect Failure – sử dụng health checks và collect logs</p>
-</li>
-<li><p>Durable Data Storage</p>
+<li><p>Services</p>
 <ul>
-<li>Synchronous replication – chỉ thừa nhận một giao dịch sau khi nó được lưu trữ lâu dài trong cả bộ lưu trữ chính và bản sao của nó. Đó là lý tưởng để bảo vệ tính toàn vẹn của dữ liệu khỏi sự cố của bộ lưu trữ chính.</li>
-<li>Asynchronous replication – tách bộ lưu trữ chính khỏi các bản sao của nó. Điều này có nghĩa là những thay đổi trên bộ lưu trữ chính không được phản ánh ngay lập tức trên bản sao của nó.</li>
-<li>Quorum-based replication – kết hợp sao chép đồng bộ và không đồng bộ bằng cách xác định số lượng nút tối thiểu phải tham gia vào thao tác ghi thành công.</li>
+<li><strong>S3</strong> nơi để sao lưu dữ liệu, có thể nhanh chóng để thực hiện khôi phục.</li>
+<li><strong>Import/Export</strong> để chuyển các tập dữ liệu rất lớn bằng cách vận chuyển các thiết bị lưu trữ trực tiếp đến AWS.</li>
+<li><strong>Glacier</strong> để lưu trữ dữ liệu dài hạn trong đó thời gian truy xuất có thể cho phép trong vài giờ.</li>
+<li><strong>Storage Gateway</strong> sao chép snapshots của dữ liệu của bạn sang S3 để sao lưu. Bạn có thể tạo local volumes hoặc EBS từ các snapshots này.</li>
+<li>Các máy chủ được cấu hình sẵn được đóng gói dưới dạng <strong>Amazon Machine Images (AMIs)</strong>.</li>
+<li><strong>Elastic Load Balancing (ELB)</strong> để phân phối lưu lượng cho nhiều instances.</li>
+<li><strong>Route 53</strong> để định tuyến lưu lượng đến các trang web khác nhau cung cấp cùng một ứng dụng hoặc dịch vụ.</li>
+<li><strong>Elastic IP address</strong> cho static IP addresses.</li>
+<li><strong>Virtual Private Cloud (Amazon VPC)</strong> để cung cấp một section riêng, tách biệt của  AWS cloud.</li>
+<li><strong>Direct Connect</strong> cho kết nối mạng chuyên dụng từ cơ sở của bạn đến AWS.</li>
+<li><strong>Relational Database Service (RDS)</strong> cho các cơ sở dữ liệu quan hệ trong đám mây.</li>
+<li><strong>DynamoDB</strong> quản lý các cơ sở dữ liệu NoQuery để lưu trữ và truy xuất bất kỳ lượng dữ liệu nào và phục vụ bất kỳ mức lưu lượng yêu cầu nào.</li>
+<li><strong>Redshift</strong> cho dịch vụ kho dữ liệu quy mô petabyte phân tích tất cả dữ liệu của bạn bằng các công cụ  thông minh hiện có.</li>
+<li><strong>CloudFormation</strong> để tạo ra các tài nguyên AWS liên quan và cung cấp chúng theo cách có trật tự và có thể dự đoán được.</li>
+<li><strong>Elastic Beanstalk</strong> là một dịch vụ để triển khai  các ứng dụng và dịch vụ web.</li>
+<li><strong>OpsWorks</strong> là một dịch vụ quản lý ứng dụng để triển khai và vận hành các ứng dụng thuộc mọi loại hình và kích cỡ.</li>
 </ul>
 </li>
-<li><p>Automated Multi-Data Center Resilience –  sử dụng AWS Regions và Availability Zones (Multi-AZ Principle).</p>
-</li>
-<li><p>Fault Isolation and Traditional Horizontal Scaling </p>
-</li>
-</ul>
-<h3 id="9-Optimize-for-Cost"><a href="#9-Optimize-for-Cost" class="headerlink" title="9. Optimize for Cost"></a>9. Optimize for Cost</h3><ul>
-<li>Right Sizing – AWS cung cấp một loạt các loại tài nguyên và cấu hình cho nhiều trường hợp sử dụng.</li>
-<li>Elasticity – tiết kiệm tiền với AWS bằng cách tận dụng độ co giãn của nền tảng.</li>
-<li>Take Advantage of the Variety of Purchasing Options.</li>
-</ul>
-<h3 id="10-Caching"><a href="#10-Caching" class="headerlink" title="10. Caching"></a>10. Caching</h3><ul>
-<li>Application Data Caching – lưu trữ và truy xuất thông tin nhanh, được quản lý từ bộ nhớ cache .</li>
-<li>Edge Caching – phục vụ nội dung theo cơ sở hạ tầng gần hơn với người xem, giúp giảm độ trễ và mang lại tốc độ truyền dữ liệu cao.</li>
-</ul>
-<h3 id="11-Security"><a href="#11-Security" class="headerlink" title="11. Security"></a>11. Security</h3><ul>
-<li>Use AWS Features for Defense in Depth – bảo mật nhiều cấp độ cơ sở hạ tầng của bạn từ mạng xuống đến ứng dụng và cơ sở dữ liệu.</li>
-<li>Share Security Responsibility with AWS – AWS xử lý bảo mật của đám mây trong khi khách hàng xử lý bảo mật trong đám mây.</li>
-<li>Reduce Privileged Access – thực hiện nguyên tắc kiểm soát đặc quyền tối thiểu.</li>
-<li>Security as Code</li>
-<li>Real-Time Auditing – thực hiện giám sát liên tục và tự động hóa các điều khiển trên AWS để giảm thiểu rủi ro bảo mật</li>
 </ul>
 <hr>
-<p>Source:<br><a href="https://d0.awsstatic.com/whitepapers/AWS_Cloud_Best_Practices.pdf" target="_blank" rel="noopener">https://d0.awsstatic.com/whitepapers/AWS_Cloud_Best_Practices.pdf</a></p>
+<p>Source:<br><a href="https://media.amazonwebservices.com/AWS_Disaster_Recovery.pdf" target="_blank" rel="noopener">https://media.amazonwebservices.com/AWS_Disaster_Recovery.pdf</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://leductienttkt.github.io/Overview/design-principles/" data-id="ck20a7wz20005i7jm4f3poiaj" class="article-share-link">Share</a>
+      <a data-url="https://leductienttkt.github.io/Overview/disaster-recovery/" data-id="ck4i7pi5y0004egjmiaa0njaw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -177,7 +151,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -203,7 +177,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li></ul>
     </div>
   </div>
 
@@ -214,6 +188,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/Storage-Services/snowball/">AWS Snowball</a>
+          </li>
         
           <li>
             <a href="/Storage-Services/glacier/">Amazon Glacier</a>
@@ -229,10 +207,6 @@
         
           <li>
             <a href="/home/introduction/">AWS Cheat Sheets</a>
-          </li>
-        
-          <li>
-            <a href="/Overview/aws-global-infrastructure/">AWS Global Infrastructure</a>
           </li>
         
       </ul>
