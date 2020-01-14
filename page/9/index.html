@@ -60,9 +60,9 @@
   
   
     
-      <article id="post-disaster-recovery" class="article article-type-post" itemscope itemprop="blogPost">
+      <article id="post-five-pillars" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/Overview/disaster-recovery/" class="article-date">
+    <a href="/Overview/five-pillars/" class="article-date">
   <time datetime="2019-06-17T03:38:20.382Z" itemprop="datePublished">17-06-2019</time>
 </a>
     
@@ -78,7 +78,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/Overview/disaster-recovery/">AWS Well-Architected Framework – Disaster Recovery</a>
+      <a class="article-title" href="/Overview/five-pillars/">AWS Well-Architected Framework – Five Pillars</a>
     </h1>
   
 
@@ -86,57 +86,80 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li><p><strong>RTO</strong> là thời gian cần thiết sau khi bị gián đoạn để khôi phục.</p>
+        <p><img src="/images/AWS-Well-Architected-Framework-Five-Pillars.jpg" alt></p>
+<h3 id="1-Operational-Excellence"><a href="#1-Operational-Excellence" class="headerlink" title="1. Operational Excellence"></a>1. Operational Excellence</h3><ul>
+<li><p>Khả năng chạy và giám sát các hệ thống để cung cấp giá trị kinh doanh và liên tục cải thiện các quy trình và thủ tục hỗ trợ.</p>
 </li>
-<li><p><strong>RPO</strong> là lượng mất dữ liệu chấp nhận được đo theo thời gian.</p>
+<li><p>Có 3 lĩnh vực và công cụ thực hành tốt nhất cho operational excellence:</p>
+<ol>
+<li>Prepare – AWS Config</li>
+<li>Operate – Amazon CloudWatch</li>
+<li>Evolve – Amazon Elasticsearch Service</li>
+</ol>
 </li>
-<li><p>Disaster Recovery With AWS</p>
-<ul>
-<li><p><strong>Backup and Restore</strong> – lưu trữ dữ liệu sao lưu trên S3 và khôi phục dữ liệu nhanh chóng và đáng tin cậy.</p>
-<p><img src="/images/Disaster-Recovery-1.jpg" alt></p>
-</li>
-<li><p><strong>Pilot Light</strong> for Quick Recovery into AWS – thời gian phục hồi nhanh hơn so với <strong>Backup and Restore</strong> vì các phần cốt lõi của hệ thống đã chạy và liên tục được cập nhật.</p>
-<p> <img src="/images/Disaster-Recovery-2.jpg" alt><br> <img src="/images/Disaster-Recovery-3.jpg" alt></p>
-</li>
-<li><p><strong>Warm Standby Solution</strong> – phiên bản thu nhỏ của một môi trường đầy đủ chức năng luôn chạy trong cloud.</p>
-<p> <img src="/images/Disaster-Recovery-4.jpg" alt><br> <img src="/images/Disaster-Recovery-5.jpg" alt></p>
-</li>
-<li><p><strong>Multi-Site Solution</strong> – chạy cơ sở hạ tầng của bạn trên một site khác.</p>
-<p> <img src="/images/Disaster-Recovery-6.jpg" alt><br> <img src="/images/Disaster-Recovery-7.jpg" alt></p>
-</li>
-<li><p>AWS Production to an AWS DR Solution Using Multiple AWS Regions – tận dụng lợi thế của AWS multiple availability zones.</p>
+<li><p>Key AWS service: <strong>AWS CloudFormation</strong> </p>
 </li>
 </ul>
+<h3 id="2-Security"><a href="#2-Security" class="headerlink" title="2. Security"></a>2. Security</h3><ul>
+<li><p>Khả năng bảo vệ thông tin, hệ thống và tài sản trong khi cung cấp giá trị kinh doanh thông qua các đánh giá rủi ro và chiến lược giảm thiểu.</p>
 </li>
-<li><p>Services</p>
-<ul>
-<li><strong>S3</strong> nơi để sao lưu dữ liệu, có thể nhanh chóng để thực hiện khôi phục.</li>
-<li><strong>Import/Export</strong> để chuyển các tập dữ liệu rất lớn bằng cách vận chuyển các thiết bị lưu trữ trực tiếp đến AWS.</li>
-<li><strong>Glacier</strong> để lưu trữ dữ liệu dài hạn trong đó thời gian truy xuất có thể cho phép trong vài giờ.</li>
-<li><strong>Storage Gateway</strong> sao chép snapshots của dữ liệu của bạn sang S3 để sao lưu. Bạn có thể tạo local volumes hoặc EBS từ các snapshots này.</li>
-<li>Các máy chủ được cấu hình sẵn được đóng gói dưới dạng <strong>Amazon Machine Images (AMIs)</strong>.</li>
-<li><strong>Elastic Load Balancing (ELB)</strong> để phân phối lưu lượng cho nhiều instances.</li>
-<li><strong>Route 53</strong> để định tuyến lưu lượng đến các trang web khác nhau cung cấp cùng một ứng dụng hoặc dịch vụ.</li>
-<li><strong>Elastic IP address</strong> cho static IP addresses.</li>
-<li><strong>Virtual Private Cloud (Amazon VPC)</strong> để cung cấp một section riêng, tách biệt của  AWS cloud.</li>
-<li><strong>Direct Connect</strong> cho kết nối mạng chuyên dụng từ cơ sở của bạn đến AWS.</li>
-<li><strong>Relational Database Service (RDS)</strong> cho các cơ sở dữ liệu quan hệ trong đám mây.</li>
-<li><strong>DynamoDB</strong> quản lý các cơ sở dữ liệu NoQuery để lưu trữ và truy xuất bất kỳ lượng dữ liệu nào và phục vụ bất kỳ mức lưu lượng yêu cầu nào.</li>
-<li><strong>Redshift</strong> cho dịch vụ kho dữ liệu quy mô petabyte phân tích tất cả dữ liệu của bạn bằng các công cụ  thông minh hiện có.</li>
-<li><strong>CloudFormation</strong> để tạo ra các tài nguyên AWS liên quan và cung cấp chúng theo cách có trật tự và có thể dự đoán được.</li>
-<li><strong>Elastic Beanstalk</strong> là một dịch vụ để triển khai  các ứng dụng và dịch vụ web.</li>
-<li><strong>OpsWorks</strong> là một dịch vụ quản lý ứng dụng để triển khai và vận hành các ứng dụng thuộc mọi loại hình và kích cỡ.</li>
+<li><p>Có 5 lĩnh vực và công cụ thực hành tốt nhất để bảo mật:</p>
+<ol>
+<li>Identity and Access Management – IAM, Multi-Factor Authentication, AWS Organizations</li>
+<li>Detective Controls – AWS CloudTrail, AWS Config, Amazon GuardDuty</li>
+<li>Infrastructure Protection – Amazon VPC, Amazon CloudFront with AWS Shield, AWS WAF</li>
+<li>Data Protection – ELB, Amazon Elastic Block Store (Amazon EBS), Amazon S3, and Amazon Relational Database Service (Amazon RDS) encryption, Amazon Macie, AWS Key Management Service (AWS KMS)</li>
+<li>Incident Response – IAM, Amazon CloudWatch Events</li>
+</ol>
+</li>
+<li><p>Key AWS service: <strong>AWS Identity and Access Management (IAM)</strong></p>
+</li>
 </ul>
+<h3 id="3-Reliability"><a href="#3-Reliability" class="headerlink" title="3. Reliability"></a>3. Reliability</h3><ul>
+<li><p>Khả năng của một hệ thống phục hồi từ sự gián đoạn cơ sở hạ tầng hoặc dịch vụ, tự động có được tài nguyên để đáp ứng nhu cầu và giảm thiểu sự gián đoạn như cấu hình sai hoặc các sự cố mạng tạm thời.</p>
 </li>
+<li><p>Có 3 lĩnh vực và công cụ thực hành tốt nhất cho reliability:</p>
+<ol>
+<li>Foundations – IAM, Amazon VPC, AWS Trusted Advisor, AWS Shield</li>
+<li>Change Management – AWS CloudTrail, AWS Config, Auto Scaling, Amazon CloudWatch</li>
+<li>Failure Management – AWS CloudFormation, Amazon S3, AWS KMS, Amazon Glacier</li>
+</ol>
+</li>
+<li><p>Key AWS service: <strong>Amazon CloudWatch</strong></p>
+</li>
+</ul>
+<h3 id="4-Performance-Efficiency"><a href="#4-Performance-Efficiency" class="headerlink" title="4. Performance Efficiency"></a>4. Performance Efficiency</h3><ul>
+<li><p>Khả năng sử dụng tài nguyên điện toán hiệu quả để đáp ứng các yêu cầu hệ thống và duy trì hiệu quả đó khi nhu cầu thay đổi và công nghệ phát triển. </p>
+</li>
+<li><p>Có 4 lĩnh vực và công cụ thực hành tốt nhất cho performance efficiency:</p>
+<ol>
+<li>Selection – Auto Scaling for Compute, Amazon EBS and S3 for Storage, Amazon RDS and DynamoDB for Database, Route53, VPC, and AWS Direct Connect for Network</li>
+<li>Review – AWS Blog and What’s New section of the website</li>
+<li>Monitoring –  Amazon CloudWatch</li>
+<li>Tradeoffs – Amazon Elasticache, Amazon CloudFront, AWS Snowball, Amazon RDS read replicas.</li>
+</ol>
+</li>
+<li><p>Key AWS service: <strong>Amazon CloudWatch</strong></p>
+</li>
+</ul>
+<h3 id="5-Cost-Optimization"><a href="#5-Cost-Optimization" class="headerlink" title="5. Cost Optimization"></a>5. Cost Optimization</h3><ul>
+<li>Khả năng tránh hoặc loại bỏ chi phí không cần thiết hoặc tài nguyên dưới mức tối ưu.</li>
+<li>Có 4 lĩnh vực và công cụ thực hành tốt nhất cho cost optimization:<ol>
+<li>Cost-Effective Resources – Cost Explorer, Amazon CloudWatch and Trusted Advisor, Amazon Aurora for RDS, AWS Direct Connect with Amazon CloudFront</li>
+<li>Matching supply and demand – Auto Scaling</li>
+<li>Expenditure Awareness –  AWS Cost Explorer, AWS Budgets</li>
+<li>Optimizing Over Time – AWS News Blog and the What’s New section on the AWS website, AWS Trusted Advisor</li>
+</ol>
+</li>
+<li>Key AWS service: <strong>Cost Explorer</strong></li>
 </ul>
 <hr>
-<p>Source:<br><a href="https://media.amazonwebservices.com/AWS_Disaster_Recovery.pdf" target="_blank" rel="noopener">https://media.amazonwebservices.com/AWS_Disaster_Recovery.pdf</a></p>
+<p>Source:<br><a href="https://d1.awsstatic.com/whitepapers/architecture/AWS_Well-Architected_Framework.pdf" target="_blank" rel="noopener">https://d1.awsstatic.com/whitepapers/architecture/AWS_Well-Architected_Framework.pdf</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://leductienttkt.github.io/Overview/disaster-recovery/" data-id="ck4i7pi5y0004egjmiaa0njaw" class="article-share-link">Share</a>
+      <a data-url="https://leductienttkt.github.io/Overview/five-pillars/" data-id="ck5dqoqxe00048ljmus934p7w" class="article-share-link">Share</a>
       
       
     </footer>
@@ -151,7 +174,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -177,7 +200,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li></ul>
     </div>
   </div>
 
@@ -188,6 +211,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/Storage-Services/storage_gateway/">AWS Storage Gateway</a>
+          </li>
         
           <li>
             <a href="/Storage-Services/snowball/">AWS Snowball</a>
@@ -205,10 +232,6 @@
             <a href="/Storage-Services/ebs/">Amazon EBS - Amazon Elastic Block Store</a>
           </li>
         
-          <li>
-            <a href="/home/introduction/">AWS Cheat Sheets</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -221,7 +244,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2019 Mr.Nara<br>
+      &copy; 2020 Mr.Nara<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

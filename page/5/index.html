@@ -57,12 +57,19 @@
         <section id="main">
   
     
-      <article id="post-introduction" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  
+    
+      <article id="post-ebs" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/home/introduction/" class="article-date">
-  <time datetime="2019-08-22T04:16:22.605Z" itemprop="datePublished">22-08-2019</time>
+    <a href="/Storage-Services/ebs/" class="article-date">
+  <time datetime="2019-09-20T07:25:27.972Z" itemprop="datePublished">20-09-2019</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Storage-Services/">Storage Services</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -71,7 +78,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/home/introduction/">AWS Cheat Sheets</a>
+      <a class="article-title" href="/Storage-Services/ebs/">Amazon EBS - Amazon Elastic Block Store</a>
     </h1>
   
 
@@ -79,39 +86,231 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>AWS Cheat Sheets</strong> được tạo ra để cung cấp cho bạn cái nhìn toàn cảnh về các dịch vụ AWS quan trọng mà bạn cần biết để có thể vượt qua kỳ thi <strong>AWS Certified Solutions Architect Associate</strong> rất khó khăn cũng như các kỳ thi chứng chỉ AWS khác.</p>
-<p>Nó được trình bày chủ yếu ở dạng các gạch đầu dòng để cung cấp cho bạn các ghi chú dễ nhớ sẽ giúp bạn hiểu rõ hơn về các dịch vụ AWS khác nhau.</p>
-<p>Mặc dù <strong>AWS Cheat Sheets</strong> này sẽ giúp bạn tiết kiệm thời gian trong việc duyệt qua tất cả các tài liệu AWS, nhưng bạn cũng nên đọc chúng cũng như các <strong>whitepapers</strong> để bổ sung cho các bài thi của bạn.</p>
-<p>Cuối cùng, nên trả lời càng nhiều <strong>practice test questions</strong> càng tốt để tăng thêm cơ hội vượt qua bài kiểm tra.</p>
-<hr>
-<ul>
-<li><a href="/categories/Overview/">AWS OVERVIEW</a></li>
-<li><a href="/categories/Compute-Services/">AWS COMPUTE SERVICES</a></li>
-<li><a href="/categories/Storage-Services/">AWS STORAGE SERVICES</a></li>
-<li>AWS DATABASE SERVICES</li>
-<li>AWS NETWORKING &amp; CONTENT DELIVERY</li>
-<li>AWS MIGRATION SERVICES</li>
-<li>AWS SECURITY &amp; IDENTITY SERVICES</li>
-<li>AWS MANAGEMENT TOOLS</li>
-<li>AWS ANALYTICS SERVICES</li>
-<li>AWS DEVELOPER TOOLS</li>
-<li>AWS BILLING AND COST MANAGEMENT</li>
-<li>AWS APPLICATION SERVICES</li>
-<li>AWS DESKTOP AND APP STREAMING</li>
-<li>AWS MACHINE LEARNING AND AI</li>
-<li>AWS DESKTOP AND APP STREAMING</li>
-<li>OTHER AWS SERVICES</li>
+        <ul>
+<li><strong>Block level storage</strong> để sử dụng với các phiên bản EC2.</li>
+<li>Rất thích hợp để sử dụng làm bộ lưu trữ chính cho các hệ thống tệp, cơ sở dữ liệu hoặc cho bất kỳ ứng dụng nào.</li>
+<li>EBS mới nhận được hiệu suất tối đa của chúng ngay khi chúng có thể dùng và không yêu cầu khởi tạo. Tuy nhiên, các khối lưu trữ trên các ổ đĩa được khôi phục từ snapshots phải được khởi tạo (lấy từ Amazon S3 và được ghi vào ổ đĩa) trước khi bạn có thể truy cập.</li>
+<li>Bảo vệ dữ liệu khi terminated instance được tắt theo mặc định, bạn phải kích hoạt thủ công.</li>
+<li>Theo mặc định, bạn có thể có tối đa 5.000 EBS volumes.</li>
+<li>Theo mặc định, bạn có thể có tới 10.000 snapshots .</li>
 </ul>
-<hr>
-<p>Chúc các bạn may mắn :v </p>
-<hr>
-<p>Nội dung được dịch từ: <a href="https://tutorialsdojo.com/aws-cheat-sheets/" target="_blank" rel="noopener">https://tutorialsdojo.com/aws-cheat-sheets/</a></p>
-<hr>
-<h2 id="Mr-Nara"><a href="#Mr-Nara" class="headerlink" title="Mr.Nara"></a>Mr.Nara</h2>
+<h3 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h3><ul>
+<li>Các loại tùy chọn lưu trữ khác nhau: General Purpose SSD (gp2), Provisioned IOPS SSD (io1), Throughput Optimized HDD (st1), Cold HDD (sc1) volumes có dung lượng lên tới 16 TB.</li>
+<li>Bạn có thể mount nhiều volumes trên cùng 1 instance, nhưng mỗi volume chỉ được gắn vào 1 instance cùng thời điểm</li>
+<li>Bạn có thể tạo một hệ thống tệp trên các ổ đĩa này hoặc sử dụng chúng theo cách mà bạn sử dụng một ổ cứng.</li>
+<li>Bạn có thể tạo các khối EBS của mình dưới dạng các khối được mã hóa,.</li>
+<li>Bạn có thể tạo các snapshots theo thời gian của EBS volumes, và sẽ được lưu trữ trên Amazon S3, Tương tự AMIs, snapshots có thể sao chép giữa cái AWS regions.</li>
+<li>Volumes được tạo trong 1 AZ cụ thể và có thể được gắn vào bất kì instances nào trong cùng AZ. Để sử dụng volume ở một AZ khác, bạn có thể tạo một snapshot và khôi phục snapshot đó thành một volume mới trong AZ đó.</li>
+<li>Bạn có thể sao chép các snapshots sang các khu vực khác và sau đó khôi phục chúng sang các volume mới ở đó, giúp dễ dàng tận dụng nhiều vùng AWS để mở rộng địa lý, di chuyển trung tâm dữ liệu và khắc phục thảm họa..</li>
+<li>Các số liệu hiệu suất, chẳng hạn như băng thông, thông lượng, độ trễ và độ dài hàng đợi trung bình do Amazon CloudWatch cung cấp, cho phép bạn theo dõi hiệu suất của volumes của mình để đảm bảo rằng bạn đang cung cấp đủ hiệu suất cho các ứng dụng của mình mà không phải trả tiền cho các tài nguyên mà bạn không nhu cầu.</li>
+<li>Nếu EBS volume là root device của instance , bạn phải dừng instance đó trước khi bạn có thể tách volume.</li>
+<li>Bạn có thể sử dụng AWS Backup, một dịch vụ sao lưu tự động và tập trung, để bảo vệ EBS volumes và các tài nguyên AWS khác của bạn. AWS Backup được tích hợp với Amazon DynamoDB, Amazon EBS, Amazon RDS, Amazon EFS và AWS Storage Gateway để cung cấp cho bạn một giải pháp sao lưu AWS được quản lý hoàn toàn.</li>
+<li>Với AWS Backup, bạn có thể định cấu hình sao lưu cho EBS volumes, tự động lập lịch sao lưu, đặt chính sách duy trì và theo dõi hoạt động sao lưu và khôi phục.</li>
+</ul>
+<h3 id="Types-of-EBS-Volumes"><a href="#Types-of-EBS-Volumes" class="headerlink" title="Types of EBS Volumes"></a>Types of EBS Volumes</h3><ul>
+<li>General Purpose SSD (gp2)<ul>
+<li>Cung cấp hiệu suất cơ bản là 3 IOPS / GiB, với khả năng lên tới 3.000 IOPS trong thời gian dài.</li>
+<li>Hỗ trợ lên tới 10.000 IOPS và 160MB/s thông lượng.</li>
+</ul>
+</li>
+<li>Provisioned IOPS SSD (io1)<ul>
+<li>Được thiết kế cho khối lượng công việc chuyên sâu I/O, đặc biệt là khối lượng công việc cơ sở dữ liệu, nhạy cảm với hiệu suất lưu trữ và tính nhất quán.</li>
+<li>Cho phép bạn chỉ định tốc độ IOPS phù hợp khi bạn tạo volume.</li>
+</ul>
+</li>
+<li>Throughput Optimized HDD (st1)<ul>
+<li>Lưu trữ chi phí thấp tập trung vào thông lượng hơn là IOPS.</li>
+<li>Throughput lên đến 500 MiB/s.</li>
+</ul>
+</li>
+<li>Cold HDD (sc1)<ul>
+<li>Lưu trữ chi phí thấp tập trung vào thông lượng hơn là IOPS.</li>
+<li>Throughput lên đến 250 MiB/s.</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Volume Type</th>
+<th>General Purpose SSD (gp2)</th>
+<th>Provisioned IOPS SSD (io1)</th>
+<th>Throughput Optimized HDD (st1)</th>
+<th>Cold HDD (sc1)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Use Cases</td>
+<td>Được khuyến nghị cho hầu hết công việc, system boot volumes, máy tính để bàn ảo, ứng dụng tương tác độ trễ thấp, môi trường development và test…</td>
+<td>Các ứng dụng kinh doanh quan trọng đòi hỏi hiệu suất IOPS bền vững, cơ sở dữ liệu lớn….</td>
+<td>Công việc -streaming đòi hỏi thông lượng nhanh, nhất quán ở mức giá thấp, big data, khoogn thể là boot volume..</td>
+<td>Dữ liệu được truy cập không thường xuyên, ưu tiên chi phí, không thể là boot volume…</td>
+</tr>
+<tr>
+<td>Volume Size</td>
+<td>1 GiB – 16 TiB</td>
+<td>4 GiB – 16 TiB</td>
+<td>500 GiB – 16 TiB</td>
+<td>500 GiB – 16 TiB</td>
+</tr>
+<tr>
+<td>Max IOPS/Volume</td>
+<td>10,000</td>
+<td>32,000</td>
+<td>500</td>
+<td>250</td>
+</tr>
+<tr>
+<td>Max Throughput/Volume</td>
+<td>160 MiB/s</td>
+<td>500 MiB/s</td>
+<td>500 MiB/s</td>
+<td>250 MiB/s</td>
+</tr>
+<tr>
+<td>Max IOPS/Instance</td>
+<td>80,000</td>
+<td>80,000</td>
+<td>80,000</td>
+<td>80,000</td>
+</tr>
+<tr>
+<td>Max Throughput/Instance</td>
+<td>1,750 MiB/s</td>
+<td>1,750 MiB/s</td>
+<td>1,750 MiB/s</td>
+<td>1,750 MiB/s</td>
+</tr>
+<tr>
+<td>Thuộc tính ưu tiên</td>
+<td>IOPS</td>
+<td>IOPS</td>
+<td>MiB/s</td>
+<td>MiB/s</td>
+</tr>
+</tbody></table>
+<p><img src="/images/EBS-1.jpg" alt></p>
+<h3 id="Encryption"><a href="#Encryption" class="headerlink" title="Encryption"></a>Encryption</h3><ul>
+<li>Dữ liệu được lưu trữ  trên một ổ đĩa được mã hóa, disk I/O và snapshots được tạo từ nó đều được mã hóa.</li>
+<li>Đồng thời cung cấp mã hóa cho dữ liệu truyền từ EC2 sang EBS do mã hóa xảy ra trên các máy chủ lưu trữ các phiên bản EC2.</li>
+<li>Các loại dữ liệu sau đây được mã hóa:<ul>
+<li>Dữ liệu bên trong volume</li>
+<li>Tất cả dữ liệu di chuyển giữa volume và instance</li>
+<li>Tất cả  snapshots được tạo từ volume</li>
+<li>Tất cả volumes được tạo từ những snapshots đó</li>
+</ul>
+</li>
+<li>Sử dụng AWS Key Management Service (AWS KMS) khi tạo các volumes được mã hóa và bất kỳ snapshots được tạo từ các volume được mã hóa của bạn.</li>
+<li>Volumes được khôi phục từ snapshots được mã hóa được tự động mã hóa.</li>
+<li>Mã hóa EBS chỉ có sẵn trên các loại instances nhất định.</li>
+<li>Không có cách trực tiếp để mã hóa một volume không được mã hóa hiện có hoặc để loại bỏ mã hóa khỏi một volume được mã hóa. Tuy nhiên, bạn có thể di chuyển dữ liệu giữa các volume được mã hóa và không được mã hóa.</li>
+</ul>
+<h3 id="Monitoring"><a href="#Monitoring" class="headerlink" title="Monitoring"></a>Monitoring</h3><ul>
+<li>Cloudwatch Monitoring 2 loại: Giám sát cơ bản và chi tiết</li>
+<li>Danh sách các trạng thái bao gồm:<ul>
+<li>Ok – volume bình thường</li>
+<li>Warning – volume xuống cấp</li>
+<li>Impaired – volume bị đình trệ</li>
+<li>Insufficient-data –  không đủ dữ kiện</li>
+</ul>
+</li>
+<li>Các sự kiện volumes bao gồm thời gian bắt đầu cho biết thời gian xảy ra sự kiện và thời lượng cho biết thời gian I/O của volume bị tắt. Thời gian kết thúc được thêm vào sự kiện khi I/O cho âm lượng được bật.</li>
+<li>Các sự kiện volume:<ul>
+<li>Awaiting Action: Enable IO</li>
+<li>IO Enabled</li>
+<li>IO Auto-Enabled</li>
+<li>Normal</li>
+<li>Degraded</li>
+<li>Severely Degraded</li>
+<li>Stalled</li>
+</ul>
+</li>
+</ul>
+<h3 id="Modifying-the-Size-IOPS-or-Type-of-an-EBS-Volume-on-Linux"><a href="#Modifying-the-Size-IOPS-or-Type-of-an-EBS-Volume-on-Linux" class="headerlink" title="Modifying the Size, IOPS, or Type of an EBS Volume on Linux"></a>Modifying the Size, IOPS, or Type of an EBS Volume on Linux</h3><ul>
+<li>Nếu EBS volume thế hệ hiện tại của bạn được gắn với loại instance EC2 thế hệ hiện tại, bạn có thể tăng kích thước của nó, thay đổi loại volume hoặc (đối với volume io1) mà không cần tách rời nó.</li>
+<li>EBS hiện hỗ trợ kích thước volume tối đa là 16 TiB.</li>
+<li>Hai lược đồ phân vùng thường được sử dụng trên các hệ thống Linux và Windows: master boot record (MBR) và GUID partition table (GPT).</li>
+<li>Một EBS volume được sửa đổi đi qua một chuỗi các trạng thái. Đầu tiên vào trạng thái Sửa đổi, sau đó là trạng thái Tối ưu hóa và cuối cùng là trạng thái Hoàn thành.</li>
+<li>Bạn có thể mở rộng một phân vùng đến một kích thước mới. Mở rộng bằng cách sử dụng parted hoặc gdisk.</li>
+<li>Giảm kích thước của EBS volume không được hỗ trợ.</li>
+</ul>
+<h3 id="EBS-Snapshots"><a href="#EBS-Snapshots" class="headerlink" title="EBS Snapshots"></a>EBS Snapshots</h3><ul>
+<li>Sao lưu dữ liệu trên EBS volume của bạn lên S3 bằng cách tạo snapshots theo thời gian.</li>
+<li>Snapshots là bản sao lưu gia tăng, có nghĩa là chỉ các volume trên thiết bị đã thay đổi sau khi snapshot gần đây nhất của bạn được lưu. Điều này giảm thiểu thời gian cần thiết để tạo snapshot và tiết kiệm chi phí lưu trữ bằng cách không sao chép dữ liệu.</li>
+<li>Khi bạn xóa một snapshot, chỉ có dữ liệu duy nhất cho snapshot đó bị xóa.</li>
+</ul>
+<p><img src="/images/EBS-2.jpg" alt></p>
+<ul>
+<li>Bạn có thể chia sẻ snapshot trên các tài khoản AWS bằng cách sửa đổi quyền truy cập của nó.</li>
+<li>Bạn có thể tạo các bản sao của snapshots của riêng bạn cũng như các snapshots đã được chia sẻ với bạn.</li>
+<li>snapshot  bị giới hạn ở Region nơi nó được tạo.</li>
+<li>EBS snapshots hổ trợ EBS encryption.</li>
+<li>Bạn có thể xóa một snapshot của root device của EBS volume được sử dụng bởi một AMI đã đăng ký. Trước tiên, bạn phải hủy đăng ký AMI trước khi bạn có thể xóa snapshot.</li>
+<li>Tags do người dùng chỉ định không được sao chép từ snapshot nguồn sang snapshot mới.</li>
+<li>Để chia sẻ snapshot với Region khác, hãy sao chép snapshot vào Region đó.</li>
+</ul>
+<h3 id="Amazon-EBS–Optimized-Instances"><a href="#Amazon-EBS–Optimized-Instances" class="headerlink" title="Amazon EBS–Optimized Instances"></a>Amazon EBS–Optimized Instances</h3><ul>
+<li>Cung cấp hiệu suất tốt nhất cho EBS volume của bạn bằng cách giảm thiểu sự tranh chấp giữa I/ OEBS và lưu lượng truy cập khác từ instance của bạn.</li>
+<li>Các phiên bản được tối ưu hóa của EBS cung cấp băng thông chuyên dụng từ 425 Mbps đến 14.000 Mbps cho EBS.</li>
+<li>Đối với các loại instance được EBS tối ưu hóa theo mặc định, không cần bật tối ưu hóa EBS và không có hiệu lực nếu bạn tắt tối ưu hóa EBS.</li>
+</ul>
+<h3 id="Pricing"><a href="#Pricing" class="headerlink" title="Pricing"></a>Pricing</h3><ul>
+<li>Bạn bị tính phí tính theo tổng số lượng lưu trữ tính bằng GB mỗi tháng cho đến khi bạn giải phóng bộ nhớ.</li>
+<li>Với Provisioned IOPS SSD (io1) bạn cũng bị tính phí bằng bởi IOPS mỗi tháng.</li>
+<li>Sau khi bạn tách volume, bạn vẫn bị tính phí lưu trữ volume miễn là dung lượng lưu trữ vượt quá giới hạn của AWS Free Tier. Bạn phải xóa volume để tránh phát sinh thêm phí.</li>
+<li>Lưu trữ snapshot dựa trên dung lượng mà dữ liệu của bạn tiêu thụ trong Amazon S3.</li>
+<li>Sao chép snapshot sang Region mới sẽ phải chịu chi phí lưu trữ mới.</li>
+<li>Khi bạn bật tối ưu hóa EBS cho một phiên bản không được tối ưu hóa EBS theo mặc định, bạn phải trả thêm một khoản phí thấp, hàng giờ cho dung lượng chuyên dụng.</li>
+</ul>
+<h3 id="Limits-of-EBS-Per-Region"><a href="#Limits-of-EBS-Per-Region" class="headerlink" title="Limits of EBS Per Region"></a>Limits of EBS Per Region</h3><table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Default Limit</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Số lượng EBS snapshots</td>
+<td>100,000</td>
+</tr>
+<tr>
+<td>Số lượng snapshots đồng thời được phép cho 1 volume duy nhất</td>
+<td>5 cho io1, gp2, magnetic; 1 cho st1, sc1</td>
+</tr>
+<tr>
+<td>Yêu cầu sao chép đồng thời vào một region</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Tổng dung lượng lưu trữ của  General Purpose SSD (gp2)</td>
+<td>300 TiB</td>
+</tr>
+<tr>
+<td>Tổng dung lượng lưu trữ của Provisioned IOPS SSD (io1)</td>
+<td>300 TiB</td>
+</tr>
+<tr>
+<td>Tổng dung lượng lưu trữ của Throughput Optimized HDD (st1)</td>
+<td>300 TiB</td>
+</tr>
+<tr>
+<td>Tổng dung lượng lưu trữ của Cold HDD (sc1)</td>
+<td>300 TiB</td>
+</tr>
+<tr>
+<td>Tổng dung lượng lưu trữ của Magnetic volumes</td>
+<td>300 TiB</td>
+</tr>
+<tr>
+<td>Tổng số IOPS được cung cấp</td>
+<td>300000</td>
+</tr>
+</tbody></table>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://leductienttkt.github.io/home/introduction/" data-id="ck4i7pi660007egjm0zax0v3e" class="article-share-link">Share</a>
+      <a data-url="https://leductienttkt.github.io/Storage-Services/ebs/" data-id="ck5dqoqy3000l8ljml4bd3s34" class="article-share-link">Share</a>
       
       
     </footer>
@@ -122,14 +321,11 @@
 
     
   
-  
-    
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -155,7 +351,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li></ul>
     </div>
   </div>
 
@@ -166,6 +362,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/Storage-Services/storage_gateway/">AWS Storage Gateway</a>
+          </li>
         
           <li>
             <a href="/Storage-Services/snowball/">AWS Snowball</a>
@@ -183,10 +383,6 @@
             <a href="/Storage-Services/ebs/">Amazon EBS - Amazon Elastic Block Store</a>
           </li>
         
-          <li>
-            <a href="/home/introduction/">AWS Cheat Sheets</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -199,7 +395,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2019 Mr.Nara<br>
+      &copy; 2020 Mr.Nara<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
